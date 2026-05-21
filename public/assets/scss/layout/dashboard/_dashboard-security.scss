@@ -1,0 +1,117 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.4 Dashboard css
+/*----------------------------------------*/
+
+
+.#{$theme-prifix}-dashboard{
+    &-security{
+        &-box{
+            padding: 5px;
+        }
+        &-from-wrap{
+            padding: 10px 70px 50px;
+            @media #{$xxl,$xl,$lg,$md} {
+                padding: 10px 20px 50px;
+            }
+            @media #{$xs} {
+                padding: 20px;
+            }
+        }
+        &-manage {
+            &-header {
+                gap: 15px;
+                display: flex;
+                border-radius: 6px;
+                padding: 20px 25px;
+                align-items: center;
+                background-color: #FBF1F2;
+                &-icon {
+                    width: 46px;
+                    height: 46px;
+                    display: flex;
+                    font-size: 18px;
+                    flex: 0 0 auto;
+                    border-radius: 50%;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--aq-common-red);
+                    border: 1px solid rgba(#DE1518, 0.1);
+                }
+            }
+            &-title {
+                margin: 0;
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--aq-common-red);
+                font-family: var(--aq-ff-onest);
+            }
+            &-subtitle {
+                font-size: 15px;
+                margin: 4px 0 0;
+                color: var(--aq-gray-8);
+                font-family: var(--aq-ff-onest);
+            }
+            &-body {
+                padding: 40px 60px;
+                @media #{$xxl,$xl,$lg,$md} {
+                    padding: 40px 40px;
+                }
+                @media #{$xs} {
+                    padding: 20px;
+                }
+            }
+            &-warning {
+                gap: 15px;
+                display: flex;
+                border-radius: 6px;
+                padding: 15px 20px;
+                margin-bottom: 25px;
+                background-color: #FFF3CD;
+                &-icon {
+                    color: #6E3F00;
+                    font-size: 20px;
+                    padding-top: 2px;
+                }
+                &-title {
+                    margin: 0 0 5px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #6E3F00;
+                    font-family: var(--aq-ff-onest);
+                }
+                &-text {
+                    margin: 0;
+                    font-size: 14px;
+                    color: #887A68;
+                    line-height: 1.5;
+                    opacity: 0.9;
+                    font-family: var(--aq-ff-onest);
+                }
+            }
+            &-footer {
+                display: flex;
+                justify-content: flex-end;
+            }
+            &-btn-delete {
+                gap: 8px;
+                display: flex;
+                color: var(--aq-common-red);
+                font-size: 15px;
+                font-weight: 500;
+                padding: 10px 20px;
+                align-items: center;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+                font-family: var(--aq-ff-onest);
+                background-color: var(--aq-common-white);
+                border: 1px solid rgba(185, 29, 31, 0.40);
+                &:hover {
+                    background-color: var(--aq-common-red);
+                    color: var(--aq-common-white);
+                }
+            }
+        }
+    }
+}

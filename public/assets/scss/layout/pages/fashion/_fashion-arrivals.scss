@@ -1,0 +1,197 @@
+@use '../../../utils' as *;
+
+/*----------------------------------------*/
+/*  9.1 Fashion Arrivals css
+/*----------------------------------------*/
+
+.aqf-arrivals{
+    &-wrap{
+        position: relative;
+        height: 100%;
+        padding: 50px 115px;
+        border: 1px solid var(--aq-gray-5);
+        @media #{$xl}{
+            padding: 35px 60px;
+        }
+        @media #{$lg}{
+            padding: 30px 30px;
+        }
+        @media #{$md}{
+            padding: 30px 60px;
+        }
+        @media #{$xs}{
+           padding: 30px 20px;
+        }
+    }
+    &-btn{
+        & .aq-btn-white.btn-square-bg {
+            padding: 15px 70px;
+        }
+    }
+    &-title{
+        &-box{
+            @media #{$xl,$lg,$md,$xs}{
+                margin-bottom: 35px;
+            }
+        }
+    }
+    &-product{
+        &-active{
+            @media #{$xl}{
+                margin-bottom: 35px;
+            }
+            @media #{$lg,$md,$xs}{
+                margin-bottom: 0;
+            }
+        }
+    }
+    &-nav{
+        height: 100%;
+        background-color: #f1f0ee;
+        &-active{
+            height: 100%;
+        }
+        &-thumb{
+            height: 100%;
+            & img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    &-area{
+        @media #{$lg}{
+            padding-top: 100px;
+        }
+        @media #{$md,$xs}{
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+    }
+}
+
+.aqf-bundle{
+    &-select{
+        & .nice-select{
+            gap: 24px;
+            height: 40px;
+            min-width: 195px;
+            padding: 7px 20px;
+            position: relative;
+            border-radius: 30px;
+            align-items: center;
+            display: inline-flex;
+            justify-content: start;
+            background-color: transparent;
+            border: 1px solid rgba(1, 15, 28, 0.10);
+            & .list {
+                margin-top: 4px;
+                min-width: 180px;
+                padding: 6px 8px;
+                border-radius: 4px;
+                border: 1px solid #EEE;
+                background: var(--aq-common-white);
+                box-shadow: 0 1px 4px 0 rgba(15, 15, 15, 0.14);
+                & .option{
+                    border-radius: 4px;
+                    margin-bottom: 2px;
+                    padding-inline-start: 12px;
+                    padding-top: 8px;
+                    padding-inline-end: 12px;
+                    padding-bottom: 8px;
+                    color: rgba(15, 15, 15, 0.80);
+                    font-family: var(--aq-ff-onest);
+                    &.selected,
+                    &:hover{
+                        background: #F6F6F6;
+                        color: var(--aq-common-black);
+                    }
+                }
+            }
+            &::after {
+                border-bottom: 1px solid var(--aq-common-black);
+                border-right: 1px solid var(--aq-common-black);
+                content: '';
+                display: block;
+                height: 8px;
+                margin-top: -4px;
+                pointer-events: none;
+                position: absolute;
+                inset-inline-end: 22px;
+                top: 49%;
+                -webkit-transform-origin: 66% 66%;
+                -ms-transform-origin: 66% 66%;
+                transform-origin: 66% 66%;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+                -webkit-transition: all 0.15s ease-in-out;
+                transition: all 0.15s ease-in-out;
+                width: 8px;
+            }
+            &.open::after {
+                -webkit-transform: rotate(-135deg);
+                -ms-transform: rotate(-135deg);
+                transform: rotate(-135deg);
+            }
+        }
+    }
+    &-details{
+        &-wrap{
+            & .aq-cartmini-product-thumbnail {
+                width: 180px;
+                height: auto;
+                margin-inline-end: 25px;
+                @media #{$lg}{
+                    width: 120px;
+                }
+            }
+            & .aq-cartmini-product-price {
+                margin-bottom: 20px;
+            }
+            & .aq-cartmini-product-item{
+                @media #{$xs} {
+                    flex-wrap: wrap;
+                    gap: 10px;
+                }
+                &:not(:last-child){
+                    border-bottom: 1px solid var(--aq-gray-5);
+                }
+            }
+        }
+    }
+    &-thumb{
+        height: 100%;
+        & img{
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &-wrap{
+        @media #{$lg,$md,$xs}{
+            margin-inline-start: 0;
+        }
+    }
+    &-5{
+        &-area{
+            @media #{$lg}{
+                padding-bottom: 60px;
+            }
+            @media #{$md,$xs}{
+                padding-bottom: 40px;
+            }
+        }
+    }
+}
+
+.elt-arrival{
+    &-area{
+        @media #{$lg}{
+            padding-bottom: 60px;
+        }
+        @media #{$md,$xs}{
+            padding-bottom: 40px;
+        }
+    }
+}

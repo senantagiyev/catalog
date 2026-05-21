@@ -1,0 +1,155 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.9 feature css
+/*----------------------------------------*/
+
+.aqf-shop{
+    &-feature{
+        &-ptb{
+            @media #{$xl,$lg,$md,$xs}{
+                padding-bottom: 40px;
+            }
+        }
+        &-item{
+            padding: 30px 40px;
+            border: 1px solid var(--aq-gray-3);
+            & span{
+                margin-bottom: 25px;
+                display: inline-block;
+                color: var(--aq-common-red);
+            }
+            & h4{
+                font-size: 20px;
+                line-height: 1;
+                margin-bottom: 10px;
+                letter-spacing: 0.2px;
+                color: var(--aq-common-black);
+                font-family: var(--aq-ff-satoshi-bold);
+                @media #{$xl}{
+                    font-size: 15px;
+                    margin-bottom: 8px;
+                }
+                @media #{$xs}{
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+            }
+            & p{
+                font-size: 16px;
+                line-height: 133.663%;
+                @media #{$xl}{
+                    font-size: 14px;
+                }
+            }
+        }
+        &-style{
+            & .aqf-shop-feature-item {
+                padding: 0;
+                border: 0;
+                @media #{$lg}{
+                    width: 50%;
+                    padding-inline-end: 30px;
+                }
+                @media #{$md,$xs}{
+                    margin-inline-end: 30px;
+                }
+                & span{
+                    color: var(--aq-common-black);
+                }
+            }
+            & .aqf-shop-feature-item p {
+                font-size: 15px;
+                margin-bottom: 0;
+                @media #{$xl}{
+                    font-size: 13px;
+                }
+                @media #{$xs}{
+                    font-size: 14px;
+                }
+            }
+            & .aqf-shop-feature-wrap{
+                padding: 40px 40px;
+                padding-bottom: 10px;
+                @media #{$xl}{
+                    padding: 40px 24px;
+                    padding-bottom: 10px;
+                }
+                @media #{$xs}{
+                    padding: 30px 20px;
+                    padding-bottom: 10px;
+                }
+            }
+            &.bdr-radius{
+                & .aqf-shop-feature-wrap{
+                    border-radius: 20px;
+                }
+            }
+        }
+        &-icon{
+            height: 60px;
+            width: 60px;
+            margin-inline-end: 16px;
+            line-height: 60px;
+            text-align: center;
+            border-radius: 50%;
+            flex: 0 0 auto;
+            color: var(--aq-common-black);
+            background-color: var(--aq-common-white);
+            @media #{$xl}{
+                height: 40px;
+                width: 40px;
+                line-height: 40px;
+            }
+            @media #{$xs}{
+                height: 50px;
+                width: 50px;
+                margin-inline-end: 12px;
+                line-height: 50px;
+            }
+        }
+    }
+}
+
+.aqf-feature{
+    &-3{
+        &-style{
+            & .aqf-shop-feature-wrap{
+                padding: 40px 40px;
+                padding-bottom: 10px;
+                border: 1px solid var(--aq-gray-3);
+                @media #{$xs}{
+                    padding: 30px 20px;
+                }
+                & .aqf-shop-feature-item{
+                    &:not(:last-child){
+                        border-right: 1px solid var(--aq-gray-3);
+                        padding-inline-end: 30px;
+                        @media #{$lg,$md}{
+                            width: 50%;
+                            border-right: 0;
+                        }
+                        @media #{$xs}{
+                            border-right: 0;
+                        }
+                    }
+                }
+            }
+            & .aqf-shop-feature-item {
+                padding: 0;
+                border: 0;
+                @media #{$lg,$md}{
+                    width: 50%;
+                }
+                & p{
+                    margin-bottom: 0;
+                }
+            }
+            & .aqf-shop-feature-item span {
+                margin-bottom: 0;
+                margin-inline-end: 15px;
+                color: var(--aq-common-black);
+            }
+        }
+    }
+}

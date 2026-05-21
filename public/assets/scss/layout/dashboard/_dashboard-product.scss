@@ -1,0 +1,118 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.3 Dashboard css
+/*----------------------------------------*/
+
+
+.#{$theme-prifix}-dashboard{
+    &-product {
+        &-card {
+            overflow: hidden;
+        }
+        &-header {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--aq-common-white-3);
+        }
+        &-title {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--aq-common-black);
+            font-family: var(--aq-ff-onest);
+        }
+        &-body {
+            padding: 0 25px;
+            padding-inline-end: 35px;
+        }
+        &-item {
+            display: flex;
+            padding: 25px 0;
+            align-items: center;
+            justify-content: space-between;
+            @media #{$xs} {
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+            &:first-child {
+                padding-bottom: 5px;
+            }
+            &-left {
+                gap: 24px;
+                display: flex;
+                align-items: center;
+            }
+        }
+        &-image {
+            img {
+                border-radius: 6px;
+            }
+        }
+        &-vendor {
+            font-size: 14px;
+            margin: 0 0 5px;
+            font-weight: 500;
+            color: var(--aq-common-black);
+            font-family: var(--aq-ff-onest);
+            span {
+                color: var(--aq-gray-8);
+                font-weight: 400;
+            }
+        }
+        &-name {
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0 0 7px;
+            color: var(--aq-common-black);
+            font-family: var(--aq-ff-onest);
+        }
+        &-meta {
+            margin: 0;
+            font-size: 14px;
+            color: rgba(95, 96, 99, 0.75);
+            font-family: var(--aq-ff-onest);
+        }
+        &-pricing {
+            min-width: 180px;
+            @media #{$xs} {
+                min-width: 100%;
+            }
+            .aq-dashboard-price-row {
+                display: flex;
+                font-size: 15px;
+                margin-bottom: 5px;
+                justify-content: space-between;
+                font-family: var(--aq-ff-onest);
+
+                .label { color: var(--aq-gray-8); font-weight: 400; }
+                .value { color: var(--aq-common-black); font-weight: 500; }
+
+                &.total-row {
+                    margin-top: 15px;
+                    padding-top: 10px;
+                    border-top: 1px solid #eeeeee;
+                }
+            }
+        }
+        &-footer {
+            display: flex;
+            padding: 20px 30px;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--aq-common-white);
+            border-top: 1px solid var(--aq-common-white-3);
+            .aq-dashboard-total-label {
+                font-size: 16px;
+                font-weight: 500;
+                color: var(--aq-common-black);
+                font-family: var(--aq-ff-onest);
+            }
+            .aq-dashboard-total-value {
+                font-size: 16px;
+                font-weight: 500;
+                color: var(--aq-common-red);
+                font-family: var(--aq-ff-onest);
+            }
+        }
+    }
+}

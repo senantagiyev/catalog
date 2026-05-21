@@ -1,0 +1,165 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.4 Dashboard css
+/*----------------------------------------*/
+
+
+.#{$theme-prifix}-dashboard{
+    &-review {
+        padding: 5px;
+        &__header {
+            border-radius: 8px;
+            padding: 17px 19px;
+            margin-bottom: 14px;
+            background: var(--aq-gray-6);
+        }
+
+        &__title {
+            gap: 16px;
+            display: flex;
+            align-items: center;
+            h4 {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 4px;
+                color: var(--aq-common-black);
+                font-family: var(--aq-ff-onest);
+            }
+            p {
+                margin: 0;
+                font-size: 14px;
+                color: var(--aq-gray-8);
+            }
+        }
+        &__icon {
+            width: 46px;
+            height: 46px;
+            display: flex;
+            font-size: 16px;
+            color: #ff9800;
+            border-radius: 50%;
+            align-items: center;
+            flex-wrap: 0 0 auto;
+            justify-content: center;
+            border: 1px solid rgba(20, 20, 20, 0.06);
+        }
+        &__item {
+            margin: 0 26px;
+            padding: 30px 0px 50px;
+            border-bottom: 1px solid rgba(20, 20, 20, 0.06);
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+        &__left {
+            gap: 26px;
+            display: flex;
+            @media #{$xs} {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+        }
+        &__thumb {
+            overflow: hidden;
+            border-radius: 8px;
+            img {
+                object-fit: cover;
+            }
+        }
+        &__content {
+            flex: 1;
+            @media #{$xs} {
+                flex: inherit;
+            }
+            h5 {
+                font-size: 15px;
+                margin: 0 0 2px;
+                font-weight: 500;
+                color: var(--aq-common-black);
+                font-family: var(--aq-ff-onest);
+            }
+        }
+        &__top {
+            gap: 10px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            justify-content: space-between;
+            @media #{$xs} {
+                flex-wrap: wrap;
+            }
+        }
+        &__status {
+            font-size: 13px;
+            font-weight: 600;
+            padding: 2px 11px;
+            border-radius: 6px;
+            display: inline-block;
+            font-family: var(--aq-ff-onest);
+            @media #{$xs} {
+                margin-top: 5px;
+            }
+            &.pending {
+                color: #ff9800;
+                background: #fff3e0;
+            }
+        }
+        &__rating {
+            line-height: 1;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        &__meta {
+            margin: 4px 0;
+            font-size: 14px;
+            color: var(--aq-common-black);
+            font-family: var(--aq-ff-onest);
+            span {
+                font-weight: 500;
+                color: var(--aq-gray-8);
+            }
+        }
+        &__comment {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 4px 0 25px;
+            color: var(--aq-gray-8);
+            & span{
+                color: var(--aq-common-black);
+            }
+        }
+        &__actions {
+            gap: 10px;
+            display: flex;
+            & button {
+                font-size: 14px;
+                font-weight: 600;
+                padding: 4px 18px;
+                border-radius: 6px;
+                background: transparent;
+                font-family: var(--aq-ff-onest);
+            }
+            .btn-edit {
+                color: #09A41C;
+                border: 1px solid #09A41C;
+    
+                &:hover {
+                    background: #09A41C;
+                    color: var(--aq-common-white);
+                }
+            }
+    
+            .btn-delete {
+                color: var(--aq-common-red);
+                border: 1px solid var(--aq-common-red);
+    
+                &:hover {
+                    background: var(--aq-common-red);
+                    color: var(--aq-common-white);
+                }
+            }
+        }
+    }
+}

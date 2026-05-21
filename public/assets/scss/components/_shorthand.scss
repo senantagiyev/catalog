@@ -1,0 +1,119 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.12 Shorthand css
+/*----------------------------------------*/
+
+.aq-text-white{
+	color: var(--aq-common-white);
+}
+.aq-text-black{
+	color: var(--aq-common-black);
+}
+.aq-text-off-white{
+	color: var(--aq-common-off-white);
+}
+.aq-line-anim {
+    display: inline;
+    transition: all 0.3s linear;
+    background-repeat: no-repeat;
+    background-size: 0% 1px, 0 1px;
+    background-position: 100% 100%, 0 100%;
+    background-image: linear-gradient(currentcolor, currentcolor), linear-gradient(currentcolor, currentcolor);
+    &:hover {
+        background-size: 0% 1px, 100% 1px;
+    }
+}
+
+.section-pt{
+    @media #{$lg}{
+        padding-top: 80px;
+    }
+    @media #{$md}{
+        padding-top: 60px;
+    }
+    @media #{$xs}{
+        padding-top: 50px;
+    }
+}
+.section-pb{
+    @media #{$lg}{
+        padding-bottom: 80px;
+    }
+    @media #{$md}{
+        padding-bottom: 60px;
+    }
+    @media #{$xs}{
+        padding-bottom: 50px;
+    }
+}
+.section-mt{
+    @media #{$lg}{
+        margin-top: 80px;
+    }
+    @media #{$md}{
+        margin-top: 60px;
+    }
+    @media #{$xs}{
+        margin-top: 50px;
+    }
+}
+.section-mb{
+    @media #{$lg}{
+        margin-bottom: 80px;
+    }
+    @media #{$md}{
+        margin-bottom: 60px;
+    }
+    @media #{$xs}{
+        margin-bottom: 50px;
+    }
+}
+
+
+.category-tab-content {
+  display: none;
+}
+.category-tab-content.active {
+  display: block;
+}
+.aq-custom{
+    &-tab{
+        &-btn{
+            position: relative;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1;
+            width: 50%;
+            padding: 15px 0;
+            text-align: center;
+            text-transform: uppercase;
+            color: var(--aq-common-black);
+            font-family: var(--aq-ff-onest);
+            &::after{
+                position: absolute;
+                bottom: -1px;
+                right: 0;
+                content: '';
+                height: 2px;
+                width: 0;
+                transition: all .3s;
+                display: inline-block;
+                background-color: var(--aq-common-black);
+            }
+            &-wrap{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            &.active{
+                &::after{
+                    width: 100%;
+                    inset-inline-end: auto;
+                    inset-inline-start: 0;
+                }
+            }
+        }
+    }
+}
+

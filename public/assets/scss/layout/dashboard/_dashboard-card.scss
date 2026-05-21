@@ -1,0 +1,168 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.2 Dashboard css
+/*----------------------------------------*/
+
+
+.#{$theme-prifix}-dashboard{
+    &-order-card {
+        width: 100%;
+        overflow: hidden;
+        &__header {
+            display: flex;
+            padding: 22px 25px;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(20, 20, 20, 0.06);
+        }
+        &__id{
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--aq-common-black);
+            font-family: var(--aq-ff-onest);
+        }
+        &__date{
+            font-size: 14px;
+            color: var(--aq-gray-8);
+            font-family: var(--aq-ff-onest);
+            & i{
+                font-style: normal;
+                font-weight: 500;
+                color: var(--aq-common-black);
+            }
+        }
+        &__body {
+            padding: 25px;
+        }
+        &__customer {
+            gap: 20px;
+            display: flex;
+            margin-bottom: 25px;
+        }
+        &__info {
+            p {
+                font-size: 15px;
+                color: #393A3C;
+                margin-bottom: 4px;
+                line-height: 1.5;
+                font-family: var(--aq-ff-onest);
+            }
+        }
+        &__stats {
+            gap: 20px;
+            display: flex;
+            justify-content: space-between;
+            @media #{$xs} {
+                flex-wrap: wrap;
+            }
+            & .stat-item{
+                font-size: 15px;
+                color: var(--aq-gray-8);
+                font-family: var(--aq-ff-onest);
+                & i{
+                    font-weight: 500;
+                    font-style: normal;
+                    color: var(--aq-common-black);
+                }
+            }
+            & .status-paid {
+                font-weight: 500;
+                color: var(--aq-common-success);
+            }
+        }
+        &__footer {
+            display: flex;
+            padding: 22px 25px;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(20, 20, 20, 0.06);
+            @media #{$xs} {
+                gap: 15px;
+                padding: 20px;
+                flex-wrap: wrap;
+            }
+        }
+        &__status-wrap {
+            font-size: 15px;
+            color: var(--aq-gray-8);
+            & .badge {
+                font-size: 13px;
+                font-weight: 600;
+                margin-inline-start: 8px;
+                padding: 6px 11px;
+                border-radius: 6px;
+                letter-spacing: 0.26px;
+                font-family: var(--aq-ff-onest);
+                &--success {
+                    color: var(--aq-common-success);
+                    background: rgba(0, 174, 118, 0.10);
+                }
+                &--pending{
+                    color: #F38507;
+                    background: rgba(224, 120, 0, 0.06);
+                }
+                &--draft{
+                    color: #C94CBE;
+                    background: rgba(201, 76, 190, 0.06);
+                }
+            }
+        }
+        &__actions {
+            gap: 10px;
+            display: flex;
+        }
+        &-btn{
+            font-size: 14px;
+            font-weight: 600;
+            padding: 6px 17px;
+            border-radius: 6px;
+            background: #3749BB;
+            color: var(--aq-common-white);
+            font-family: var(--aq-ff-onest);
+            & span{
+                @extend %svg-1;
+                margin-inline-end: 5px;
+                display: inline-block;
+            }
+            &:hover{
+                color: var(--aq-common-white);
+                background-color: rgba($color: #3749BB, $alpha: 0.9);
+            }
+            &.cancel{
+                color: var(--aq-common-red);
+                background: rgba(185, 29, 31, 0.06);
+            }
+        }
+    }
+    &-order-banner {
+        display: flex;
+        padding: 30px 26px;
+        align-items: center;
+        justify-content: space-between;
+        font-family: var(--aq-ff-onest);
+        &__content {
+            gap: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__id {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.4px;
+            color: var(--aq-common-black);
+            font-family: var(--aq-ff-onest);
+        }
+
+        &__meta {
+            margin: 0;
+            font-size: 14px;
+            color: var(--aq-gray-8);
+            font-family: var(--aq-ff-onest);
+            span {
+                color: var(--aq-common-black);
+            }
+        }
+    }
+}

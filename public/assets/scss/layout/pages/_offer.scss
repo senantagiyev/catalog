@@ -1,0 +1,108 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.14 Offer Product
+/*----------------------------------------*/
+
+.aq-offer-banner{
+    &-title{
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 1.09;
+        margin-bottom: 15px;
+        letter-spacing: -1.92px;
+        color: var(--aq-common-white);
+        font-family: var(--aq-ff-satoshi-bold);
+        @media #{$xs} {
+            font-size: 42px;
+        }
+    }
+    &-heading{
+        & p{
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--aq-common-white);
+            font-family: var(--aq-ff-satoshi-bold);
+        }
+    }
+    &-item{
+        position: relative;
+        text-align: center;
+        padding: 30px 8px 8px;
+        backdrop-filter: blur(5px);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px dashed rgba(255, 255, 255, 0.30);
+        &-dis{
+            font-size: 12px;
+            font-weight: 700;
+            padding: 0px 13px;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            display: inline-block;
+            text-transform: uppercase;
+            color: var(--aq-common-white);
+            background: rgba(0, 0, 0, 0.16);            
+            font-family: var(--aq-ff-satoshi-bold);
+        }
+        &-title{
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 13px;
+            color: var(--aq-common-white);
+            font-family: var(--aq-ff-satoshi-bold);
+        }
+        &-content{
+            margin-bottom: 35px;
+            & p{
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 1;
+                color: rgba(255, 255, 255, 0.70);
+                font-family: var(--aq-ff-satoshi-bold);
+            }
+        }
+        &-btn{
+            & .copy-btn{
+                width: 100%;
+                padding: 15px 40px;
+                background-color: var(--aq-common-white);
+                &:hover{
+                    opacity: 0.9;
+                }
+                & em{
+                    display: block;
+                    margin: 0;
+                    font-size: 11px;
+                    font-weight: 500;
+                    line-height: 1.25;
+                    font-style: normal;
+                    text-transform: uppercase;
+                    color: rgba(20, 20, 20, 0.70);
+                }
+                & span{
+                    font-size: 16px;
+                    font-weight: 700;
+                    letter-spacing: 0.32px;
+                    text-transform: uppercase;
+                    color: var(--aq-common-black);
+                    font-family: var(--aq-ff-satoshi-bold);
+                }
+            }
+        }
+    }
+    &-text{
+        & .aqf-text-slide-item {
+            gap: 35px;
+            & span{
+                margin-inline-end: 35px;
+            }
+            & p{
+                font-size: 13px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: var(--aq-common-white);
+                font-family: var(--aq-ff-satoshi-bold);
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.14 Pagination css
+/*----------------------------------------*/
+
+.aq-pagination{
+    & nav{
+        & ul{
+            gap: 6px;
+            display: flex;
+            & li{
+                list-style: none;
+                &:not(:last-child) {
+                    margin-inline-end: 1px;
+                }
+                & a,
+                & span{
+                    display: inline-block;
+                    font-weight: 500;
+                    font-size: 16px;
+                    min-height: 44px;
+                    min-width: 44px;
+                    line-height: 44px;
+                    text-align: center;
+                    color: var(--aq-gray-2);
+                    background-color: transparent;
+                    font-family: var(--aq-ff-onest);
+                    border: 1px solid rgba(1, 15, 28, 0.10);
+                    &:hover,
+                    &.current{
+                        color: var(--aq-common-white);
+                        background-color: var(--aq-common-black);
+                    }
+                }
+            }
+        }
+    }
+    &.radius-style{
+        & nav{
+            & ul{
+                & li{
+                    & a,
+                    & span{
+                        border-radius: 6px;
+                    }
+                }
+            }
+        }
+    }
+    &.pagination-red-style{
+        & nav{
+            & ul{
+                & li{
+                    & span{
+                        background-color: var(--aq-common-red);
+                    }
+                    & a{
+                        &:hover{
+                            background-color: var(--aq-common-red);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

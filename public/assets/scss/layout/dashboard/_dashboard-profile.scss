@@ -1,0 +1,53 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.4 Dashboard css
+/*----------------------------------------*/
+
+
+.#{$theme-prifix}-dashboard{
+    &-profile{
+        &-box{
+            padding: 60px 70px;
+            @media #{$lg} {
+                padding: 50px;
+            }
+            @media #{$md} {
+                padding: 40px;
+            }
+            @media #{$xs} {
+                padding: 50px 20px;
+            }
+        }
+        &-avatar{
+            display: inline-block;
+            & img{
+                border-radius: 50%;
+            }
+            &-wrap{
+                @media #{$lg,$md,$xs} {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        &-edit{
+            position: absolute;
+            bottom: 0;
+            inset-inline-end: 0;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            border-radius: 50%;
+            place-content: center;
+            display: inline-grid;
+            background: #F3F3F7;
+            border: 3px solid var(--aq-common-white);
+            & input{
+                display: none;
+            }
+            & svg{
+                @extend %svg-2;
+            }
+        }
+    }
+}

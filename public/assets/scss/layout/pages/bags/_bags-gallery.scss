@@ -1,0 +1,74 @@
+@use '../../../utils' as *;
+
+/*----------------------------------------*/
+/*  8.2 Bags Gallery css
+/*----------------------------------------*/
+.aqb-gallery{
+    &-area{
+        @media #{$lg,$md,$xs}{
+            padding-top: 30px;
+            padding-bottom: 70px;
+        }
+    }
+    &-title{
+        &-box{
+            @media #{$md,$xs}{
+                margin-bottom: 20px;
+            }
+            & p{
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 24px;
+                margin-bottom: 0;
+                color: rgba(1, 15, 28, 0.80);
+                font-family: var(--aq-ff-onest);
+            }
+        }
+    }
+    &-follower{
+        & a{
+            min-height: 85px;
+            padding: 20px 45px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 24px;
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+            border: 1px solid #ECECEA;
+            color: var(--aq-common-black);
+            font-family: var(--aq-ff-onest);
+            @media #{$xs}{
+                padding: 20px 30px;
+                font-size: 16px;
+            }
+            & span {
+                position: absolute;
+                top: 7px;
+                inset-inline-end: 10px;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 20px;
+                color: rgba(1, 15, 28, 0.80);
+                font-family: var(--aq-ff-onest);
+            }
+            & i{
+                margin-inline-end: 12px;
+                & svg{
+                    transform: translateY(-1px);
+                }
+            }
+        }
+    }
+    &-item{
+        & img{
+            transition: .9s;
+            width: 100%;
+        }
+        &:hover{
+            & img{
+                transform: scale(1.1);
+            }
+        }
+    }
+}

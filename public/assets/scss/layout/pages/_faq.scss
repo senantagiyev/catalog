@@ -1,0 +1,169 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.8 Faq css
+/*----------------------------------------*/
+
+
+.aq-faq{
+    &-area{
+        @media #{$lg,$md,$xs} {
+            padding-bottom: 60px;
+        }
+    }
+    &-wrap{
+        & .accordion-buttons{
+            position: relative;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.2;
+            width: 100%;
+            text-align: left;
+            padding: 21px 30px;
+            padding-inline-end: 60px;
+            @include aq-transition();
+            color: var(--aq-common-black);
+            font-family: var(--aq-ff-onest);
+            &:not(.collapsed){
+                & .aq-faq-icon{
+                    background-color: #F9F9F9;
+                    border-color: #F9F9F9;
+                    &::before{
+                        @include aq-transform(translate(-50%, -50%) rotate(0deg));
+                    }
+                    &::before,
+                    &::after{
+                        background-color: var(--aq-common-black);
+                    }
+                }
+            }
+        }
+        & .accordion-items{
+            margin-bottom: 10px;
+            border: 1px solid #E6E8F0;
+            background: var(--aq-common-white);
+        }
+        & .accordion-body{
+            padding: 0 70px 20px 30px;
+
+            @media #{$xs} {
+                padding: 0 50px 20px 30px;
+            }
+
+            & p{
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                margin-bottom: 0;
+                color: #4E4F53;
+                font-family: var(--aq-ff-onest);
+                @media #{$xxl,$xl,$lg,$md,$xs} {
+                    & br{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    &-icon{
+        position: absolute;
+        top: 14px;
+        inset-inline-end: 20px;
+        height: 34px;
+        width: 34px;
+        line-height: 34px;
+        text-align: center;
+        border-radius: 50%;
+        display: inline-block;
+        border: 1px solid rgba(3, 31, 66, 0.14);
+        &::after,
+        &::before{
+            position: absolute;
+            content: '';
+            width: 12px;
+            height: 2px;
+            top: 50%;
+            border-radius: 2px;
+            inset-inline-start: 50%;
+            @include aq-transition();
+            background-color: #87888B;
+            
+            @include aq-transform(translate(-50%, -50%));
+        }
+        &::before{
+            @include aq-transform(translate(-50%, -50%) rotate(90deg));
+        }
+    }
+    &-sidebar{
+        &-widget{
+            &-search{
+                position: relative;
+                & .aq-sidebar-widget-search-icon{
+                    position: absolute;
+                    top: 50%;
+                    line-height: 1;
+                    inset-inline-end: 20px;
+                    color: var(--aq-common-black);
+                    font-family: var(--aq-ff-onest);
+                    @include aq-transform(translateY(-50%));
+                }
+            }
+            &-list{
+                & .nav{
+                    border: none;
+                    & .nav-item{
+                        width: 100%;
+                        display: block;
+                        margin-bottom: 5px;
+                        & .nav-link{
+                            width: 100%;
+                            font-size: 16px;
+                            font-weight: 400;
+                            border: none;
+                            display: flex;
+                            text-align: start;
+                            padding: 9px 20px;
+                            background: #F9F9F9;
+                            border-radius: 0;
+                            justify-content: space-between;
+                            font-family: var(--aq-ff-onest);
+                            color: rgba(20, 20, 20, 0.80);
+                            @media #{$lg} {
+                                font-size: 14px;
+                            }
+                            &.active{
+                                color: var(--aq-common-white);
+                                background: var(--aq-common-red);
+                                &:hover{
+                                    color: var(--aq-common-white);
+                                }
+                                & span{
+                                    opacity: 1;
+                                    visibility: visible;
+                                    transform: translateX(0px);
+                                }
+                            }
+                            &:hover{
+                                color: var(--aq-common-black);
+                            }
+                            & span{
+                                opacity: 0;
+                                visibility: hidden;
+                                @include aq-transition();
+                                transform: translateX(-6px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-title{
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 20px;
+            color: var(--aq-common-black);
+            font-family: var(--aq-ff-onest);
+        }
+    }
+}

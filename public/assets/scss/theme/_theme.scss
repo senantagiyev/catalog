@@ -1,0 +1,431 @@
+@use '../utils' as *;
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Bazaro - Multipurpose eCommerce HTML Template
+    Author: Aqlova
+    Support: htaqs://help.aqlova.com/login
+    Description: Bazaro - Multipurpose eCommerce HTML Template
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+/************ TABLE OF CONTENTS ***************
+
+	---------------------------------
+    01. THEME CSS
+	---------------------------------
+		1.1 Theme Default
+		1.2 Common Classes
+		
+	-----------------------------------
+    02. COMPONENTS css
+	-----------------------------------
+		2.1 Back to top
+		2.2 Buttons
+		2.3 Animations
+		2.4 Preloader
+		2.5 Background
+		2.6 Breadcrumb
+		2.7 Section Title
+		2.8 select
+		2.9 Modal css
+		2.10 Search css
+		2.11 Cartmini css
+		2.12 Shorthand css
+		2.13 Range Slider css
+		2.14 Pagination css
+
+	---------------------------------
+    03. HEADER CSS
+	---------------------------------
+		3.1 Header Style 1
+
+    ---------------------------------
+	04. MENU CSS
+	---------------------------------
+		4.1 dropdown scss
+		4.2 Mobile Menu
+		4.3 offcanvas scss
+
+	---------------------------------
+	05. BLOG CSS
+	---------------------------------
+		5.1 Postbox css
+		5.2 Recent Post css
+		5.3 Sidebar css
+		5.4 Blog css
+
+	---------------------------------
+	06. FOOTER CSS
+	---------------------------------
+		6.1 Footer Style 1
+	
+	---------------------------------
+	07. PAGES CSS
+	---------------------------------
+		7.1 About css
+		7.2 Brand css
+		7.3 Cart css
+		7.4 categories css
+		7.5 Contact css
+		7.6 Cosmetics css
+		7.7 Countdown css
+		7.8 Faq css
+		7.9 feature css
+		7.9 Furniture css
+		7.10 Grocery css
+		7.11 Group Product
+		7.12 login css
+		7.13 Medical css
+		7.14 Offer Product
+		7.15 Product details css
+		7.16 Poduct sidebar css
+		7.17 Product css
+		7.18 Shop-gram css
+		7.19 Stocked Product
+		7.20 Testimonial css
+		7.21 Countdown css
+		7.22 Tooltip css
+		7.23 Vendor css
+		7.24 Electronics slider css
+			
+	---------------------------------
+	08. Bags CSS
+	---------------------------------
+		8.1 Bags Collection css
+		8.2 Bags Gallery css
+		8.3 Bags Hero css
+		8.4 Bags sale css
+			
+	---------------------------------
+	09. Fashion CSS
+	---------------------------------
+		9.1 Fashion Arrivals css
+		8.2 Bags Gallery css
+		9.2 Fashion Banner css
+		9.3 Fashion deals css
+		9.4 Fashion hero css
+		9.5 Fashion slider css
+		9.6 Fashion testimonial css
+
+**********************************************/
+
+
+/*----------------------------------------*/
+/*  1.1 Theme Default
+/*----------------------------------------*/
+
+@import url($font-url);
+
+@media (min-width: 1400px) {
+	.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+		max-width: 1430px;
+	}
+	.container-1890{
+		max-width: 1890px;
+	}
+	.container-1850{
+		max-width: 1850px;
+	}
+	.container-1830{
+		max-width: 1830px;
+	}
+	.container-1800{
+		max-width: 1800px;
+	}
+	.container-1750{
+		max-width: 1750px;
+	}
+	.container-1630{
+		max-width: 1630px;
+	}
+	.container-1550{
+		max-width: 1550px;
+	}
+	.container-1330{
+		max-width: 1330px;
+	}
+	.container-1240{
+		max-width: 1240px;
+	}
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+
+/*---------------------------------
+	typography css start 
+---------------------------------*/
+body {
+	font-size: 14px;
+	line-height: 26px;
+	font-weight: normal;
+	color: var(--aq-text-body);
+	font-family: var(--aq-ff-body);
+}
+
+img{
+	max-width: 100%;
+}
+
+a{
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0px;
+	font-weight: 500;
+	line-height: 1.2;
+	@include aq-transition(color);
+	color: var(--aq-common-black);
+	font-family: var(--aq-ff-heading);
+}
+
+h1 {
+	font-size: 40px;
+}
+  
+h2 {
+font-size: 36px;
+}
+
+h3 {
+font-size: 28px;
+}
+
+h4 {
+font-size: 24px;
+}
+
+h5 {
+font-size: 20px;
+}
+
+h6 {
+font-size: 16px;
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+p {
+	font-size: 16px;
+	font-weight: 400;
+	margin-bottom: 15px;
+	line-height: 22px;
+	font-family: var(--aq-ff-p);
+	color: var(--aq-text-body);
+}
+
+
+a,
+button,
+p,
+input,
+select,
+textarea,
+li,
+.transition-3{
+	@extend %transition;
+}
+
+a:not([href]):not([class]), 
+a:not([href]):not([class]):hover {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:focus,
+.button:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+a:focus,
+a:hover{
+	color: inherit;
+	text-decoration: none;
+}
+
+a,
+button {
+	color: inherit;
+	outline: none;
+	border: none;
+	background: transparent;
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+button:focus{
+    outline: 0; 
+}
+
+
+*::-moz-selection {
+	background: var(--aq-common-black);
+	color: var(--aq-common-white);
+	text-shadow: none;
+}
+::-moz-selection {
+	background: var(--aq-common-black);
+	color: var(--aq-common-white);
+	text-shadow: none;
+}
+::selection {
+	background: var(--aq-common-black);
+	color: var(--aq-common-white);
+	text-shadow: none;
+}
+
+*::-moz-placeholder {
+	color: var(--aq-common-black);
+	font-size: 14px;
+	opacity: 1;
+}
+*::placeholder {
+	color: var(--aq-common-black);
+	font-size: 14px;
+	opacity: 1;
+}
+
+
+.flex-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+input,
+textarea{
+	height: 46px;
+	width: 100%;
+	outline: none;
+	font-size: 16px;
+	line-height: 46px;
+	border-radius: 6px;
+	padding-inline-start: 20px;
+	padding-inline-end: 60px;
+	border: 1px solid #F6F6F9;
+	color: var(--aq-common-black);
+	background-color: var(--aq-common-white);
+	box-shadow: 0 0 1px 0 rgba(20, 20, 20, 0.40);
+	&::placeholder{
+		font-size: 16px;
+		color: #6E6E73;
+	}
+	&:focus{
+		background-color: transparent;
+		border-color: var(--aq-common-black);
+		&::placeholder{
+			opacity: 0;
+		}
+	}
+}
+
+textarea{
+	resize: none;
+	line-height: 1.4;
+	min-height: 140px;
+	padding-top: 17px;
+	padding-bottom: 17px;
+}
+
+.aq-form-label {
+	font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 12px;
+    color: var(--aq-common-black);
+    font-family: var(--aq-ff-satoshi-bold);
+}
+
+.aq-form-control {
+	height: 46px;
+	width: 100%;
+	outline: none;
+	font-size: 16px;
+	line-height: 46px;
+	border-radius: 6px;
+	padding-inline-start: 20px;
+	padding-inline-end: 60px;
+	border: 1px solid #F6F6F9;
+	color: var(--aq-common-black);
+	background-color: var(--aq-common-white);
+	box-shadow: 0 0 1px 0 rgba(20, 20, 20, 0.40);
+	&::placeholder{
+		font-size: 16px;
+		color: #6E6E73;
+	}
+	&:focus{
+		background-color: transparent;
+		border-color: var(--aq-common-black);
+		&::placeholder{
+			opacity: 0;
+		}
+	}
+	&.h-56{
+		height: 56px;
+		line-height: 56px;
+	}
+	&.brr-0{
+		border-radius: 0;	
+	}
+}
+
+.aq-form-checkbox{
+	display: none;
+    &:checked{
+        & ~ label{
+            &::before{
+				border-color: var(--aq-common-black);
+                background-color: var(--aq-common-black);
+            }
+        }
+    }
+	&-label {
+		z-index: 1;
+		font-size: 15px;
+		font-weight: 500;
+		color: #6E6E73;
+		position: relative;
+		padding-inline-start: 26px;
+		&::before {
+			position: absolute;
+			content: '';
+			top: 4px;
+			inset-inline-start: 0;
+			width: 18px;
+			height: 18px;
+			border-radius: 4px;
+			transition: all 0.4s ease;
+			border: 1px solid #D9D9D9;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 12px 10px;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='9' viewBox='0 0 10 9' fill='none'%3E%3Cpath d='M0.750122 5.50012C0.750122 5.50012 2.35012 6.41265 3.15012 7.75012C3.15012 7.75012 5.55012 2.50012 8.75012 0.750122' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+			background-color: var(--aq-common-white);
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}

@@ -1,0 +1,208 @@
+@use '../../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.24 Electronics slider css
+/*----------------------------------------*/
+
+.elt-slider{
+    &-area{
+        @media #{$xs}{
+            margin-bottom: 20px;
+        }
+    }
+    &-item{
+        overflow: hidden;
+        border-radius: 20px;
+        height: 660px;
+        background-color: #EEEBE5;
+        @media #{$xl}{
+            height: 570px;
+            border-radius: 0;
+        }
+        @media #{$lg}{
+            height: 580px;
+            border-radius: 0;
+        }
+        @media #{$md}{
+            height: 390px;
+            border-radius: 0;
+        }
+        @media #{$xs}{
+            height: auto;
+            flex-wrap: wrap;
+            border-radius: 0;
+            background-color: transparent;
+        }
+        & .aq-section-title.fs-56 {
+            margin-bottom: 15px;
+        }
+    }
+    &-thumb{
+        position: absolute;
+        top: 0;
+        inset-inline-start: 0;
+        width: 100%;
+        height: 100%;
+        @media #{$xs}{
+            height: 420px;
+            position: static;
+        }
+        @media #{$sm}{
+            height: 470px;
+        }
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &-video{
+        position: absolute;
+        top: 0;
+        inset-inline-end: 0;
+        height: 100%;
+        @media #{$lg}{
+            inset-inline-end: -8%;
+        }
+        @media #{$xs}{
+            position: static;
+            height: 420px;
+            width: 100%;
+        }
+        @media #{$sm}{
+            height: 470px;
+        }
+        & video{
+            height: 100%;
+            @media #{$xs}{
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    &-price{
+        display: block;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 14px;
+        color: var(--aq-common-black);
+        font-family: var(--aq-ff-onest);
+        @media #{$xs}{
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+    }
+    &-active{
+        margin: 0 -540px;
+        @media #{$xl,$lg,$md,$xs}{
+            margin: 0;
+        }
+        & .swiper-slide-active {
+            & .elt-slider-content {
+                & .aq-section-subtitle,
+                & .aq-section-title,
+                & .elt-slider-price,
+                & .aq-btn-black {
+                    animation-name: fadeInUp;
+                    animation-fill-mode: both;
+                } 
+            }
+        }
+        & .swiper-slide-prev,
+        & .swiper-slide-next{
+            & .elt-slider-content{
+                & .aq-section-subtitle,
+                & .aq-section-title,
+                & .elt-slider-price,
+                & .aq-btn-black {
+                    display: none;
+                } 
+            }
+        }
+    }
+    &-content{
+        padding: 30px 0;
+        padding-inline-start: 90px;
+        @media #{$xl,$lg,$md}{
+            padding-inline-start: 40px;
+        }
+        @media #{$xs}{
+            padding: 0;
+            margin: 0 auto;
+            text-align: center;
+            padding: 40px 30px;
+        }
+        & .aq-section-subtitle{
+            animation-delay: 0.3s;
+            animation-duration: 1s;
+        }
+        & .aq-section-title{
+            animation-delay: 0.5s;
+            animation-duration: 1s;
+        }
+        & .elt-slider-price{
+            animation-delay: 0.7s;
+            animation-duration: 1s;
+        }
+        & .aq-btn-black{
+            animation-delay: 0.9s;
+            animation-duration: 1s;
+        }
+    }
+    &-arrow{
+        bottom: 5%;
+        inset-inline-end: 13%;
+        z-index: 2;
+        position: absolute;
+        @media #{$md}{
+            inset-inline-end: 3%;
+        }
+        @media #{$xs}{
+            display: none;
+        }
+        & button{
+            height: 46px;
+            width: 46px;
+            border-radius: 50%;
+            display: inline-block;
+            border: 1px solid rgba(0, 7, 9, 0.08);
+            &:hover{
+                color: var(--aq-common-white);
+                border-color: var(--aq-common-black);
+                background-color: var(--aq-common-black);
+            }
+            &.aq-slider-prev{
+                & svg{
+                    transform: translate(0px, -1px);
+                }
+            }
+            &.aq-slider-next{
+                & svg{
+                    transform: translate(0px, -1px);
+                }
+            }
+        }
+        &.grc-slider-arrow{
+            position: static;
+            opacity: 0;
+            visibility: hidden;
+            @include aq-transition();
+            & button{
+                position: absolute;
+                top: 50%;
+                inset-inline-start: 40px;
+                z-index: 2;
+                border-color: transparent;
+                background: var(--aq-common-white);
+                box-shadow: 0 1px 2px 0 rgba(20, 20, 20, 0.10);
+                &:hover{
+                    background-color: var(--aq-common-green);
+                }
+                &.aqf-slider-next{
+                    inset-inline-start: auto;
+                    inset-inline-end: 40px;
+                }
+            }
+        }
+    }
+}

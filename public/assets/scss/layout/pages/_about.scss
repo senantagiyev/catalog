@@ -1,0 +1,240 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.1 About css
+/*----------------------------------------*/
+.aq-about{
+    &-banner{
+        @media #{$xs} {
+            padding-bottom: 50px ;
+        }
+    }
+    &-feature{
+        &-heading{
+            @media #{$xs} {
+                margin-bottom: 40px;
+            }
+        }
+        &-style{
+            &.csm-feature-style {
+                @media #{$lg,$md,$xs} {
+                    padding-bottom: 40px;
+                }
+                & .aqf-shop-feature-item{
+                    & h4{
+                        font-size: 24px;
+                        font-family: var(--aq-ff-satoshi-medium);
+                    }
+                    & p{
+                        font-size: 15px;
+                        line-height: 1.6;
+                        & br{
+                            @media #{$lg,$md,$xs} {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            &.aq-login-page-style.grc-feature-style {
+                & .aqf-shop-feature{
+                    &-wrap{
+                        border-top: 1px solid rgba(0, 7, 9, 0.08);
+                    }
+                    &-item{
+                        padding-top: 26px;
+                        @media #{$xl} {
+                            padding: 15px 20px 15px 20px;
+                        }
+                        & span{
+                            color: var(--aq-common-coffee);
+                        }
+                        &:not(:first-of-type) {
+                            border-color: rgba(0, 7, 9, 0.08);
+                        }
+                    }
+                    &-content {
+                        & h4{
+                            color: var(--aq-common-black);
+                        }
+                        & p{
+                            color: rgba(34, 29, 25, 0.70);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-product{
+        &-border{
+            border-bottom: 1px solid #EBEBEB;
+            @media #{$lg,$md,$xs} {
+                padding-bottom: 50px;
+            }
+        }
+        &-content{
+            & p{
+                font-size: 15px;
+                line-height: 1.6;
+                margin-bottom: 32px;
+                color: var(--aq-common-black);
+                font-family: var(--aq-ff-satoshi-regular);
+                & br{
+                    @media #{$lg,$md,$xs} {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &-btn{
+            & .aq-btn-black{
+                padding: 14px 30px;
+            }
+        }
+        &-thumb{
+            & img{
+                @media #{$md,$xs} {
+                    width: 100%;
+                }
+            }
+        }
+        &-wrap{
+            @media #{$md,$xs} {
+                padding-bottom: 40px;
+            }
+        }
+    }
+    &-team{
+        &-style{
+            @media #{$lg,$md,$xs} {
+                padding-bottom: 40px;
+            }
+        }
+        &-item{
+            &:hover{
+                & .aq-about-team-item-thumb{
+                    & img{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+            &-thumb{
+                overflow: hidden;
+                & img{
+                    width: 100%;
+                    transition: all .5s ease-in-out;
+                }
+            }
+            & h4{
+                font-size: 18px;
+                font-weight: 500;
+                margin-bottom: 5px;
+                letter-spacing: -0.18px;
+                color: var(--aq-common-black);
+                font-family: var(--aq-ff-satoshi-medium);
+            }
+            & p{
+                font-size: 11px;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: rgba(15, 15, 15, 0.60);
+            }
+        }
+    }
+}
+
+.aq-store{
+    &-office{
+        &-tab{
+            &.product-details-tab-nav{
+                & button{
+                    padding: 20px 144px;
+                    @media #{$xl} {
+                        padding: 20px 112px;
+                    }
+                    @media #{$lg} {
+                        padding: 20px 95px;
+                    }
+                    @media #{$md} {
+                        padding: 20px 65px;
+                    }
+                    @media #{$xs} {
+                        padding: 20px 40px;
+                        margin: 15px 0px 15px;
+                    }
+                    &::before{
+                        position: absolute;
+                        bottom: 0;
+                        content: '';
+                        inset-inline-end: 0;
+                        height: 2px;
+                        width: 100%;
+                        background-color: rgba(20, 20, 20, 0.08);
+                        @media #{$xs} {
+                            content: none;
+                        }
+                    }
+                    &::after {
+                        @media #{$xs} {
+                            bottom: -15px;
+                        }
+                    }
+                }
+            }
+        }
+        &-content{
+            padding-inline-start: 80px;
+            @media #{$md,$xs} {
+                padding-top: 40px;
+                padding-inline-start: 40px;
+            }
+        }
+        &-title{
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 70px;
+            letter-spacing: -0.3px;
+            color: var(--aq-common-black);
+            font-family: var(--aq-ff-satoshi-bold);
+            @media #{$md,$xs} {
+                margin-bottom: 45px;
+            }
+        }
+        &-item {
+            margin-bottom: 30px;
+        }
+        &-sub-title {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--aq-common-black);
+            font-family: var(--aq-ff-satoshi-medium);
+        }
+        &-text {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 6px;
+            color: var(--aq-common-black);
+            font-family: var(--aq-ff-satoshi-regular);
+            &:hover{
+                color: var(--aq-common-red);
+            }
+        }
+        &-link {
+            font-weight: 500;
+            margin-top: 10px;
+            display: inline-block;
+            text-decoration: underline;
+            color: var(--aq-common-black);
+            &:hover{
+                color: var(--aq-common-red);
+            }
+        }
+        &-thumb{
+            & img{
+                width: 100%;
+            }
+        }
+    }
+}

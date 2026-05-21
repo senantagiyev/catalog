@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"$env:USERPROFILE\\\\Desktop\" -ErrorAction SilentlyContinue; Get-ChildItem \"$env:USERPROFILE\\\\OneDrive\\\\Desktop\" -ErrorAction SilentlyContinue)",
+      "PowerShell([Environment]::GetFolderPath\\(\"Desktop\"\\))",
+      "PowerShell(\\(Get-Content \"C:\\\\Users\\\\User\\\\OneDrive\\\\Masaüstü\\\\14innocent\\\\bazaro\\\\index.html\"\\).Count)"
+    ]
+  }
+}

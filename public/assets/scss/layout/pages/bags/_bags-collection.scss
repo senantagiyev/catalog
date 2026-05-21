@@ -1,0 +1,67 @@
+@use '../../../utils' as *;
+
+/*----------------------------------------*/
+/*  8.1 Bags Collection css
+/*----------------------------------------*/
+
+.aqb-collection{
+    &-right{
+        padding-inline-end: 60px;
+        padding-inline-start: 30px;
+        @media #{$lg,$md,$xs}{
+            padding-inline-end: 15px;
+            padding-inline-start: 15px;
+        }
+    }
+    &-thumb{
+        padding-inline-end: 30px;
+        position: sticky;
+        top: 0;
+        @media #{$lg,$md,$xs}{
+            padding-inline-end: 0;
+            margin-bottom: 40px;
+        }
+        & img{
+            width: 100%;
+        }
+    }
+}
+
+.aqb-explore{
+    &-area{
+        @media #{$lg,$md,$xs}{
+            padding-top: 70px;
+            padding-bottom: 30px;
+        }
+    }
+    &-content{
+        & p{
+            margin-bottom: 30px;
+            color: var(--aq-common-black);
+            @media #{$lg}{
+                font-size: 15px;
+            }
+            & br{
+                @media #{$xs} {
+                    display: none;
+                }
+            }
+        }
+    }
+    &-thumb{
+        overflow: hidden;
+        & img{
+            transition: .3s;
+            width: 100%;
+        }
+    }
+    &-item{
+        &:hover{
+            & .aqb-explore-thumb{
+                & img{
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}

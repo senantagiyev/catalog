@@ -1,0 +1,162 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.4 Dashboard css
+/*----------------------------------------*/
+
+
+.#{$theme-prifix}-dashboard{
+    &-addrs {
+        &-wrapper {
+            gap: 20px;
+            display: flex;
+            padding: 40px;
+            border-radius: 8px;
+            background: var(--aq-gray-6);
+            flex-direction: column;
+            border: 6px solid var(--aq-common-white);
+            box-shadow: 0 1px 2px 0 rgba(1, 15, 28, 0.10);
+            @media #{$xs} {
+                padding: 20px;
+            }
+            & .welcome-text{
+                & h2{
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: var(--aq-common-black);
+                    font-family: var(--aq-ff-onest);
+                }
+                & p{
+                    font-size: 15px;
+                    color: var(--aq-gray-8);
+                    font-family: var(--aq-ff-onest);
+                }
+            }
+        }
+        &-card {
+            padding: 25px;
+            position: relative;
+            border-radius: 12px;
+            background: var(--aq-common-white);
+            border: 1px solid rgba(20, 20, 20, 0.06);
+        }
+        &-header {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(20, 20, 20, 0.06);
+        }
+        &-name {
+            margin: 0;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--aq-common-black);
+            font-family: var(--aq-ff-onest);
+        }
+        &-wrap{
+            gap: 20px;
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            @media #{$xs} {
+                flex-wrap: wrap;
+            }
+        }
+        &-actions {
+            gap: 12px;
+            display: flex;
+            align-items: center;
+        }
+        &-link {
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            font-family: var(--aq-ff-onest);
+
+            &--edit { color: #0641C1;
+                &:hover{
+                    color: #0641C1;
+                }
+            }
+            &--delete { color: var(--aq-common-red);
+                &:hover{
+                    color: var(--aq-common-red);
+                }
+            }
+        }
+        &-divider {
+            width: 1px;
+            height: 15px;
+            background-color: rgba(20, 20, 20, 0.06);
+        }
+        &-body {
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        &-info-item {
+            gap: 12px;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            color: var(--aq-gray-8);
+            font-family: var(--aq-ff-onest);
+        }
+        &-promo {
+            gap: 20px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            border-radius: 12px;
+            border: 1px solid var(--aq-common-white-3);
+            background: var(--aq-common-white);
+            @media #{$xs} {
+                flex-wrap: wrap;
+            }
+            &-icon {
+                width: 60px;
+                height: 60px;
+                display: flex;
+                flex-shrink: 0;
+                color: var(--aq-gray-8);
+                font-size: 20px;
+                border-radius: 50%;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--aq-gray-6);
+            }
+            &-title {
+                margin: 0 0 5px;
+                font-size: 18px;
+                font-weight: 500;
+                color: var(--aq-common-black);
+                font-family: var(--aq-ff-onest);
+            }
+            &-text {
+                margin: 0 0 15px;
+                font-size: 15px;
+                color: var(--aq-gray-8);
+                line-height: 1.5;
+                font-family: var(--aq-ff-onest);
+            }
+        }
+        &-btn-add {
+            gap: 8px;
+            color: var(--aq-common-red);
+            font-size: 15px;
+            font-weight: 400;
+            padding: 7px 23px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            background-color: transparent;
+            border: 1px solid rgba(185, 29, 31, 0.20);
+
+            &:hover {
+                border-color: var(--aq-common-red);
+                background-color: var(--aq-common-red);
+                color: var(--aq-common-white);
+            }
+        }
+    }
+}

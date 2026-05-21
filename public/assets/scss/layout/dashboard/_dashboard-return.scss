@@ -1,0 +1,334 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.4 Dashboard css
+/*----------------------------------------*/
+
+
+.#{$theme-prifix}-dashboard{
+    &-returen {
+        &__header {
+            padding: 30px 25px 30px 30px;
+        }
+        &__title-wrap {
+            gap: 6px;
+            display: flex;
+            flex-direction: column;
+        }
+        &__title {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--aq-common-black);
+            font-family: var(--aq-ff-onest);
+        }
+        &__date {
+            margin: 0;
+            font-size: 14px;
+            color: var(--aq-gray-8);
+        }
+        &__status {
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 11px;
+            border-radius: 6px;
+            width: fit-content;
+            display: inline-block;
+            letter-spacing: 0.26px;
+            font-family: var(--aq-ff-onest);
+            &.delivered {
+                color: var(--aq-common-success);
+                background: rgba(0, 174, 118, 0.1);
+            }
+        }
+        &__body {
+            gap: 210px;
+            display: flex;
+            padding: 16px 30px;
+            justify-content: space-between;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+            @media #{$xl} {
+                gap: 145px;
+            }
+            @media #{$lg} {
+                gap: 85px;
+            }
+            @media #{$md,$xs} {
+                gap: 14px;
+                flex-direction: column;
+            }
+        }
+        &__info {
+            gap: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: var(--aq-gray-8);
+
+            & p{
+                margin: 0;
+                font-size: 15px;
+                font-family: var(--aq-ff-onest);
+                & span {
+                    font-weight: 500;
+                    color: var(--aq-common-black);
+                }
+            }
+        }
+        &__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &__footer {
+            display: flex;
+            padding: 18px 0;
+            padding-inline-start: 30px;
+            padding-inline-end: 25px;
+            justify-content: flex-end;
+        }
+        &-r {
+            &-card{
+                padding: 10px;
+            }
+            &-header {
+                gap: 10px;
+                display: flex;
+                border-radius: 8px;
+                padding: 15px 24px;
+                align-items: center;
+                background-color: var(--aq-gray-6);
+                & span{
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: var(--aq-common-black);
+                    font-family: var(--aq-ff-onest);
+                }
+            }
+            &-body {
+                gap: 30px;
+                display: grid;
+                padding: 30px 25px;
+                grid-template-columns: repeat(3, 1fr);
+                @media #{$xs} {
+                    gap: 20px;
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+            &-item {
+                gap: 8px;
+                display: flex;
+                flex-direction: column;
+            }
+            &-label {
+                font-size: 14px;
+                line-height: 1;
+                color: var(--aq-gray-8);
+                font-family: var(--aq-ff-onest);
+                & svg{
+                    @extend %svg-1;
+                    margin-inline-end: 3px;
+                }
+            }
+            &-value {
+                font-size: 15px;
+                font-weight: 500;
+                color: var(--aq-common-black);
+                font-family: var(--aq-ff-onest);
+            }
+            &-badge {
+                font-size: 13px;
+                font-weight: 500;
+                padding: 4px 12px;
+                border-radius: 6px;
+                display: inline-block;
+            }
+        }
+
+        &-from {
+            &-card {
+                padding: 10px;
+            }
+            &-header {
+                gap: 10px;
+                display: flex;
+                border-radius: 8px;
+                padding: 15px 24px;
+                align-items: center;
+                background-color: var(--aq-gray-6);
+                & span{
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: var(--aq-common-black);
+                    font-family: var(--aq-ff-onest);
+                }
+            }
+            &-content {
+                padding: 20px;
+                overflow-x: scroll;
+            }
+            &-section {
+                margin-bottom: 40px;
+            }
+            &-label {
+                gap: 8px;
+                display: flex;
+                font-size: 15px;
+                font-weight: 500;
+                align-items: center;
+                margin-bottom: 12px;
+                color: var(--aq-common-black);
+                font-family: var(--aq-ff-onest);
+            }
+            &-select {
+                & .aqf-bundle-select{
+                    & .nice-select{
+                        height: 46px;
+                        outline: none;
+                        cursor: pointer;
+                        min-width: 600px;
+                        border-radius: 8px;
+                        padding: 12px 15px;
+                        border: 1px solid var(--aq-common-white-3);
+                        background-color: transparent;
+                        @media #{$xs} {
+                            min-width: 100%;
+                        }
+                        & .list{
+                            background-color: var(--aq-common-white);
+                        }
+                    }
+                }
+            }
+            &-product{
+                @media #{$lg,$md,$xs} {
+                    width: 760px;
+                }
+                &-card {
+                    display: flex;
+                    padding: 20px;
+                    align-items: center;
+                    border-radius: 12px;
+                    border: 1px solid var(--aq-common-white-3);
+                    justify-content: space-between;
+                    background: var(--aq-common-white);
+                }
+                &-left {
+                    gap: 15px;
+                    display: flex;
+                    align-items: center;
+                }
+                &-img {
+                    img {
+                        width: 100%; 
+                        height: 100%; 
+                        object-fit: contain; 
+                    }
+                }
+                &-name {
+                    margin: 0 0 4px;
+                    font-size: 15px;
+                    font-weight: 500;
+                    color: var(--aq-common-black);
+                    font-family: var(--aq-ff-onest);
+                }
+                &-sku {
+                    margin: 0 0 4px;
+                    font-size: 13px;
+                    color: var(--aq-gray-8);
+                    font-family: var(--aq-ff-onest);
+                }
+                &-price {
+                    margin: 0;
+                    font-size: 13px;
+                    color: var(--aq-gray-8);
+                    font-family: var(--aq-ff-onest);
+                    span { 
+                        color: var(--aq-common-red); 
+                        font-weight: 500; 
+                    }
+                }
+                &-right {
+                    gap: 70px;
+                    display: flex;
+                }
+            }
+            &-stat-box {
+                gap: 4px;
+                display: flex;
+                .label {
+                    display: block;
+                    font-size: 15px;
+                    color: var(--aq-gray-8);
+                    margin-bottom: 5px;
+                    font-family: var(--aq-ff-onest);
+                    & svg{
+                        @extend %svg-1;
+                        margin-inline-end: 4px;
+                    }
+                }
+                .value {
+                    font-size: 15px;
+                    font-weight: 500;
+                    color: var(--aq-common-black);
+                    font-family: var(--aq-ff-onest);
+                    &.value--green{
+                        color: var(--aq-common-success);
+                    }
+                }
+            }
+            &-footer {
+                display: flex;
+                padding: 16px;
+                margin-top: 10px;
+                border-radius: 8px;
+                align-items: center;
+                background-color: var(--aq-gray-6);
+                justify-content: space-between;
+                @media  #{$md,$xs} {
+                    gap: 15px;
+                    text-align: center;
+                }
+                @media #{$lg,$md,$xs} {
+                    width: 760px;
+                }
+            }
+            &-note {
+                margin: 0;
+                gap: 8px;
+                display: flex;
+                font-size: 14px;
+                color: var(--aq-gray-8);
+                align-items: center;
+                font-family: var(--aq-ff-onest);
+            }
+            &-btn {
+                gap: 8px;
+                border: none;
+                font-size: 14px;
+                font-weight: 600;
+                display: flex;
+                padding: 8px 20px;
+                border-radius: 4px;
+                align-items: center;
+                transition: opacity 0.3s;
+                background-color: var(--aq-common-red);
+                color: var(--aq-common-white);
+                font-family: var(--aq-ff-onest);
+                &:hover {
+                    opacity: 0.9;
+                }
+            }
+            &-checkbox {
+                input[type="checkbox"] {
+                    width: 18px;
+                    height: 18px;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    accent-color: var(--aq-common-red);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,244 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.6 Cosmetics css
+/*----------------------------------------*/
+
+.csm-categories{
+    &-style{
+        @media #{$xs}{
+            padding-top: 40px;
+        }
+        & .aqf-categories-img {
+            height: 160px;
+            width: 160px;
+        }
+        & .aqf-categories-item span {
+            font-size: 18px;
+            display: inline-block;
+            text-transform: capitalize;
+            font-family: var(--aq-ff-satoshi-bold);
+            & i{
+                position: absolute;
+                top: -10px;
+                font-size: 14px;
+                font-style: normal;
+                inset-inline-end: -15px;
+            }
+        }
+    }
+}
+.csm-bundle{
+    &-style{
+        @media #{$md}{
+            padding-top: 0;
+            padding-bottom: 60px;
+        }
+        @media #{$xs}{
+            padding-top: 0;
+            padding-bottom: 30px;
+        }
+        & .aqf-bundle-wrap{
+            height: 100%;
+            padding: 60px 65px;
+            border: 1px solid #F5F5F5;
+            @media #{$lg}{
+                padding: 35px 30px;
+            }
+            @media #{$md}{
+                padding: 40px;
+            }
+            @media #{$xs}{
+                padding: 40px 0;
+                border: 0;
+            }
+        } 
+        & .aq-cartmini-product-thumbnail {
+            width: 110px;
+            height: auto;
+            flex: 0 0 auto;
+            margin-inline-end: 25px;
+        }
+        & .aq-cartmini-product-summary-wrap{
+            width: 100%;
+        }
+        & .aq-cartmini-product-summary{
+            @media #{$xs}{
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+.csm-banner{
+    &-style{
+        @media #{$md,$xs}{
+            padding-bottom: 0;
+        }
+        & .aqf-banner-2-content {
+            top: 0;
+            padding: 60px;
+            transform: translateY(0);
+            @media #{$xl,$md,$xs}{
+                padding: 30px;
+            }
+        }
+        & .aq-section-subtitle {
+            text-transform: capitalize;
+        }
+    }
+}
+.csm-stories{
+    &-area{
+        @media #{$md,$xs}{
+            padding-top: 60px;
+            padding-bottom: 0;
+        }
+    }
+    &-item{
+        height: 445px;
+        @media #{$lg}{
+            height: 600px;
+        }
+    }
+    &-content{
+        &-wrap{
+            position: absolute;
+            bottom: 0;
+            inset-inline-start: 0;
+            inset-inline-end: 0;
+            margin: 12px;
+            padding: 4px;
+            border-radius: 218px;
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+        }
+    }
+    &-video{
+        line-height: 1;
+        & video{
+            width: 100%;
+            object-fit: cover;
+            background-size: cover;
+        }
+    }
+    &-thumb{
+        &-sm{
+            flex: 0 0 auto;
+            margin-inline-end: 15px;
+            & img{
+                border-radius: 50%;
+            }
+        }
+    }
+    &-title{
+        font-size: 18px;
+        line-height: 1;
+        margin-bottom: 3px;
+        color: var(--aq-common-white);
+        font-family: var(--aq-ff-satoshi-bold);
+    }
+    &-content{
+        & span{
+            font-size: 15px;
+            line-height: 1;
+            color: var(--aq-common-white);
+            font-family: var(--aq-ff-satoshi-bold);
+        }
+    }
+}
+.csm-feature{
+    &-style{
+        @media #{$xl,$lg,$md}{
+            margin: 0px 30px;
+        }
+        @media #{$xs}{
+            margin: 0;
+        }
+        & .aqf-shop-feature-item {
+            padding: 0;
+            border: 1px solid transparent;
+        }
+        &.aqf-shop-feature-ptb {
+            @media #{$xl,$lg,$md,$xs}{
+                padding-top: 40px;
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+.csm-product{
+    &-tab{
+        &-btn{
+            & ul{
+                border-bottom: 1px solid #DFE0E1;
+                & li{
+                    &:not(:last-child){
+                        & button{
+                            padding-inline-end: 15px;
+                            margin-inline-end: 15px;
+                            &::before{
+                                position: absolute;
+                                content: '';
+                                top: 8px;
+                                height: 4px;
+                                width: 4px;
+                                border-radius: 50%;
+                                inset-inline-end: -3px;
+                                background-color: #CED2D6;
+                            }
+                        }
+                    }
+                    &:first-child{
+                        & button{
+                            padding-inline-start: 15px;
+                        }
+                    }
+                    &:last-child{
+                        & button{
+                            padding-inline-end: 15px;
+                        }
+                    }
+                    & button{
+                        position: relative;
+                        font-size: 16px;
+                        line-height: 1;
+                        color: #A0A2A4;
+                        font-family: var(--aq-ff-satoshi-reglar);
+                        @media #{$xs}{
+                            font-size: 14px;
+                        }
+                        &::after{
+                            position: absolute;
+                            bottom: -7px;
+                            inset-inline-start: 0;
+                            content: '';
+                            height: 1px;
+                            width: 100%;
+                            width: 0;
+                            display: inline-block;
+                            transition: .3s ease-in-out;
+                            background-color: var(--aq-common-black);
+                        }
+                        &.active{
+                            color: var(--aq-common-black);
+                            &::after{
+                                width: 100%;
+                            }
+                            &.aq-tooltip-top .aq-tooltip-item {
+                                visibility: visible;
+                                opacity: 1;
+                                transform: translateY(-6px) translateX(-50%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-title-box{
+        @media #{$xs}{
+            margin-bottom: 20px;
+        }
+    }
+}
