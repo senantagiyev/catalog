@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\ContactMessage;
+use App\Models\Faq;
 use App\Models\Page;
 use App\Models\Product;
 use App\Models\Slider;
@@ -38,7 +39,9 @@ class PageController extends Controller
 
     public function contact(Request $request)
     {
-        return view('contact');
+        $faqs = Faq::active()->orderBy('sort_order')->orderBy('id')->get();
+
+        return view('contact', compact('faqs'));
     }
 
     public function sendContact(Request $request)
@@ -70,6 +73,18 @@ class PageController extends Controller
     public function products(Request $request)
     {
         $query = Product::active()->with(['images', 'colors', 'category', 'brand']);
+
+        if ($request->filled('search')) {
+            $term = trim($request->search);
+            $like = '%' . $term . '%';
+            $query->where(function ($q) use ($like) {
+                foreach (['az', 'en', 'ru'] as $locale) {
+                    $q->orWhere("name->{$locale}", 'like', $like);
+                    $q->orWhere("short_description->{$locale}", 'like', $like);
+                }
+                $q->orWhere('sku', 'like', $like);
+            });
+        }
 
         if ($request->filled('category')) {
             $query->whereHas('category', fn ($q) => $q->where('slug', $request->category));

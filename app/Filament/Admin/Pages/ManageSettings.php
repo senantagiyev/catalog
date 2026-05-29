@@ -30,7 +30,7 @@ class ManageSettings extends Page implements HasForms
 
     protected static ?string $title = 'Site Settings';
 
-    protected string $view = 'filament-panels::pages.page';
+    protected string $view = 'filament.admin.pages.manage-settings';
 
     public ?array $data = [];
 

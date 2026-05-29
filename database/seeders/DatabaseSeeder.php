@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             SubscriberSeeder::class,
             ContactMessageSeeder::class,
             TranslationSeeder::class,
+            FaqSeeder::class,
         ]);
     }
 }

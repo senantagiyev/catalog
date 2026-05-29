@@ -19,7 +19,10 @@ class Setting extends Model
 
     public static function get(string $key, mixed $default = null): mixed
     {
-        return Cache::rememberForever("setting:$key", function () use ($key, $default) {
+        $locale = app()->getLocale();
+        $fallback = config('app.fallback_locale');
+
+        return Cache::rememberForever("setting:$key:$locale", function () use ($key, $locale, $fallback, $default) {
             $setting = static::query()->where('key', $key)->first();
 
             if (! $setting) {
@@ -29,7 +32,7 @@ class Setting extends Model
             $value = $setting->value;
 
             if ($setting->is_translatable && is_array($value)) {
-                return $value[app()->getLocale()] ?? $value[config('app.fallback_locale')] ?? $default;
+                return $value[$locale] ?? $value[$fallback] ?? $default;
             }
 
             return $value ?? $default;
@@ -42,12 +45,19 @@ class Setting extends Model
             ['key' => $key],
             ['value' => $value, 'group' => $group, 'type' => $type, 'is_translatable' => $translatable]
         );
-        Cache::forget("setting:$key");
+        static::forgetKey($key);
+    }
+
+    public static function forgetKey(string $key): void
+    {
+        foreach (['az', 'en', 'ru'] as $locale) {
+            Cache::forget("setting:$key:$locale");
+        }
     }
 
     protected static function booted(): void
     {
-        static::saved(fn (Setting $s) => Cache::forget("setting:{$s->key}"));
-        static::deleted(fn (Setting $s) => Cache::forget("setting:{$s->key}"));
+        static::saved(fn (Setting $s) => static::forgetKey($s->key));
+        static::deleted(fn (Setting $s) => static::forgetKey($s->key));
     }
 }

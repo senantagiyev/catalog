@@ -5,12 +5,17 @@
 
    <meta charset="utf-8">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
-   <title>Bazaro - Fashion eCommerce HTML, Bootstrap Template</title>
-   <meta name="description" content="">
+   @php
+      $siteName = setting('site_name') ?: '14innocent';
+      $metaTitle = setting('meta_title');
+      $defaultTitle = trim($siteName . ($metaTitle ? ' — ' . $metaTitle : ''));
+      $defaultDescription = setting('meta_description', '');
+   @endphp
+   <title>@yield('title', $defaultTitle)</title>
+   <meta name="description" content="@yield('description', $defaultDescription)">
    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <!-- Place favicon.ico in the root directory -->
-   <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/logo/favicon.png') }}">
+   <link rel="shortcut icon" type="image/x-icon" href="{{ setting('favicon') ? media(setting('favicon')) : asset('assets/img/logo/favicon.png') }}">
 
    <!-- CSS here -->
    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
@@ -18,6 +23,8 @@
    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
    <link rel="stylesheet" href="{{ asset('assets/css/custom-animation.css') }}">
    <link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.css') }}">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
    <link rel="stylesheet" href="{{ asset('assets/css/font-awesome-pro.css') }}">
    <link rel="stylesheet" href="{{ asset('assets/css/spacing.css') }}">
@@ -70,14 +77,14 @@
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
-                  <div class="aq-search-input p-relative mb-60">
-                     <input type="text" placeholder="What are you looking for?">
+                  <form action="{{ route('products') }}" method="GET" class="aq-search-input p-relative mb-60">
+                     <input type="text" name="search" value="{{ request('search') }}" placeholder="{{ t('search.placeholder', 'What are you looking for?') }}">
                      <button type="submit" class="aq-search-input-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                            <path d="M13.6792 12.6197C13.3863 12.3268 12.9114 12.3268 12.6185 12.6197C12.3256 12.9126 12.3256 13.3875 12.6185 13.6804L13.1489 13.15L13.6792 12.6197ZM13.1489 13.15L12.6185 13.6804L16.2185 17.2803L16.7489 16.75L17.2792 16.2197L13.6792 12.6197L13.1489 13.15ZM15.1499 7.94997H15.8999C15.8999 3.55932 12.3406 0 7.94997 0V0.75V1.5C11.5122 1.5 14.3999 4.38775 14.3999 7.94997H15.1499ZM7.94997 0.75V0C3.55932 0 0 3.55932 0 7.94997H0.75H1.5C1.5 4.38775 4.38775 1.5 7.94997 1.5V0.75ZM0.75 7.94997H0C0 12.3406 3.55932 15.8999 7.94997 15.8999V15.1499V14.3999C4.38775 14.3999 1.5 11.5122 1.5 7.94997H0.75ZM7.94997 15.1499V15.8999C12.3406 15.8999 15.8999 12.3406 15.8999 7.94997H15.1499H14.3999C14.3999 11.5122 11.5122 14.3999 7.94997 14.3999V15.1499Z" fill="currentcolor"/>
                         </svg>
                      </button>
-                  </div>
+                  </form>
                </div>
             </div>
             <div class="row">
@@ -1524,6 +1531,7 @@
    <script src="{{ asset('assets/js/purecounter.js') }}"></script>
    <script src="{{ asset('assets/js/isotope-pkgd.js') }}"></script>
    <script src="{{ asset('assets/js/lazysize.min.js') }}"></script>
+   <script src="{{ asset('assets/js/slick.min.js') }}"></script>
    <script src="{{ asset('assets/js/slider-active.js') }}"></script>
    <script src="{{ asset('assets/js/imagesloaded-pkgd.js') }}"></script>
    <script src="{{ asset('assets/js/ajax-form.js') }}"></script>

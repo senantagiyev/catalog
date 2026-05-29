@@ -29,3 +29,26 @@ if (! function_exists('setting')) {
         return \App\Models\Setting::get($key, $default);
     }
 }
+
+if (! function_exists('media')) {
+    /**
+     * Resolve a stored media path (uploaded via the public disk) to a public URL.
+     * Returns the given value untouched if it already looks absolute, or a fallback
+     * asset path is empty.
+     */
+    function media(?string $path, ?string $fallback = null): string
+    {
+        if ($path === null || $path === '') {
+            return $fallback ? asset($fallback) : '';
+        }
+        if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://') || str_starts_with($path, '/')) {
+            return $path;
+        }
+        // Static theme assets shipped in /public are referenced as-is.
+        if (str_starts_with($path, 'assets/')) {
+            return asset($path);
+        }
+        // Otherwise treat as a file on the public storage disk (Filament uploads).
+        return \Illuminate\Support\Facades\Storage::disk('public')->url($path);
+    }
+}

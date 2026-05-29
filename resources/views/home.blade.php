@@ -10,8 +10,8 @@
                <div class="swiper-slide">
                   <div class="aqf-slider-item p-relative">
                      <div class="aqf-slider-thumb">
-                        <img class="w-100 d-none d-md-block" src="{{ $slider->image ? asset($slider->image) : asset('assets/img/fashion-1/slider/slider-1.png') }}" alt="{{ $slider->title }}">
-                        <img class="w-100 d-md-none" src="{{ $slider->mobile_image ? asset($slider->mobile_image) : ($slider->image ? asset($slider->image) : asset('assets/img/fashion-1/slider/slider-1-1.jpg')) }}" alt="{{ $slider->title }}">
+                        <img class="w-100 d-none d-md-block" src="{{ media($slider->image, 'assets/img/fashion-1/slider/slider-1.png') }}" alt="{{ $slider->title }}">
+                        <img class="w-100 d-md-none" src="{{ media($slider->mobile_image ?: $slider->image, 'assets/img/fashion-1/slider/slider-1-1.jpg') }}" alt="{{ $slider->title }}">
                      </div>
                      <div class="container">
                         <div class="row align-items-center">
@@ -86,7 +86,7 @@
                      <div class="aq-categories-item-wrap text-center p-relative mb-25">
                         <div class="aq-categories-item-img">
                            <a href="{{ route('products', ['category' => $category->slug]) }}">
-                              <img src="{{ $category->image ? asset($category->image) : asset('assets/img/categories/item-1.jpg') }}" alt="{{ $category->name }}">
+                              <img src="{{ media($category->image, 'assets/img/categories/item-1.jpg') }}" alt="{{ $category->name }}">
                            </a>
                         </div>
                         <div class="aq-categories-item-content">
@@ -109,7 +109,7 @@
                   <div class="col-lg-{{ $loop->count == 1 ? '12' : ($loop->count == 2 ? '6' : '4') }}">
                      <div class="aq-categories-banner-item p-relative mb-30" data-bg-color="#EEEBE5">
                         <div class="aq-categories-banner-item-img">
-                           <img src="{{ $slider->image ? asset($slider->image) : asset('assets/img/cosmetics/banner/banner-4.jpg') }}" alt="{{ $slider->title }}">
+                           <img src="{{ media($slider->image, 'assets/img/cosmetics/banner/banner-4.jpg') }}" alt="{{ $slider->title }}">
                         </div>
                         <div class="aq-categories-banner-item-content">
                            @if($slider->subtitle)
@@ -180,7 +180,7 @@
                   <div class="col text-center">
                      <a href="{{ route('products', ['brand' => $brand->slug]) }}" class="aqf-brand-item d-block py-30">
                         @if($brand->logo)
-                           <img src="{{ asset($brand->logo) }}" alt="{{ $brand->name }}" style="max-height:60px;">
+                           <img src="{{ media($brand->logo) }}" alt="{{ $brand->name }}" style="max-height:60px;">
                         @else
                            <span class="fs-20 ff-satoshi-med">{{ $brand->name }}</span>
                         @endif

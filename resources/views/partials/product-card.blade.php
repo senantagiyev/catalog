@@ -20,10 +20,10 @@
         @endif
         <a href="{{ route('product.details', $product->slug) }}">
             @if($primary)
-                <img class="lazyload aq-product-img" src="{{ asset($primary->path) }}" alt="{{ $product->name }}">
+                <img class="lazyload aq-product-img" src="{{ media($primary->path) }}" alt="{{ $product->name }}">
             @endif
             @if($hover)
-                <img class="aq-img-hover lazyload" src="{{ asset($hover->path) }}" alt="">
+                <img class="aq-img-hover lazyload" src="{{ media($hover->path) }}" alt="">
             @endif
         </a>
     </div>

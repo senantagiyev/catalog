@@ -38,7 +38,7 @@
                      <div class="aq-categories-item-wrap text-center p-relative mb-25">
                         <div class="aq-categories-item-img">
                            <a href="{{ route('products', ['category' => $category->slug]) }}">
-                              <img src="{{ $category->image ? asset($category->image) : asset('assets/img/categories/item-1.jpg') }}" alt="{{ $category->name }}">
+                              <img src="{{ media($category->image, 'assets/img/categories/item-1.jpg') }}" alt="{{ $category->name }}">
                            </a>
                         </div>
                         <div class="aq-categories-item-content">

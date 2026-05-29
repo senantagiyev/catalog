@@ -89,7 +89,7 @@
                <div class="col-lg-4 col-md-6">
                   <div class="aq-categories-item-wrap text-center p-relative mb-25">
                      <div class="aq-categories-item-img">
-                        <img src="{{ $category->image ? asset($category->image) : asset('assets/img/categories/item-1.jpg') }}" alt="{{ $category->name }}">
+                        <img src="{{ media($category->image, 'assets/img/categories/item-1.jpg') }}" alt="{{ $category->name }}">
                      </div>
                      <div class="aq-categories-item-content">
                         <h2 class="aq-categories-item-title"><a class="aq-line-anim" href="{{ route('products', ['category' => $category->slug]) }}">{{ $category->name }}</a></h2>

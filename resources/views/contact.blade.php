@@ -177,96 +177,23 @@
                <div class="col-lg-7">
                   <div class="aq-faq-wrap">
                      <div class="accordion" id="accordionExample">
-                        <div class="accordion-items">
-                           <div class="accordion-header">
-                              <button class="accordion-buttons" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                 What is the return process?
-                                 <span class="aq-faq-icon"></span>
-                              </button>
-                           </div>
-                           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                 </p>
+                        @forelse(($faqs ?? collect()) as $index => $faq)
+                           <div class="accordion-items">
+                              <div class="accordion-header">
+                                 <button class="accordion-buttons {{ $index === 0 ? '' : 'collapsed' }}" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaq{{ $faq->id }}" aria-expanded="{{ $index === 0 ? 'true' : 'false' }}" aria-controls="collapseFaq{{ $faq->id }}">
+                                    {{ $faq->question }}
+                                    <span class="aq-faq-icon"></span>
+                                 </button>
+                              </div>
+                              <div id="collapseFaq{{ $faq->id }}" class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}" data-bs-parent="#accordionExample">
+                                 <div class="accordion-body">
+                                    <p>{!! nl2br(e($faq->answer)) !!}</p>
+                                 </div>
                               </div>
                            </div>
-                        </div>
-                        <div class="accordion-items">
-                           <div class="accordion-header">
-                              <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                 Can I cancel my order after placing it?
-                                 <span class="aq-faq-icon"></span>
-                              </button>
-                           </div>
-                           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                 </p>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="accordion-items">
-                           <div class="accordion-header">
-                              <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                 How can I check the status of my order?
-                                 <span class="aq-faq-icon"></span>
-                              </button>
-                           </div>
-                           <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                 </p>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="accordion-items">
-                           <div class="accordion-header">
-                              <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                 Which items are not eligible for return?
-                                 <span class="aq-faq-icon"></span>
-                              </button>
-                           </div>
-                           <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                 </p>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="accordion-items">
-                           <div class="accordion-header">
-                              <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                 How long does it take to receive a refund after a return?
-                                 <span class="aq-faq-icon"></span>
-                              </button>
-                           </div>
-                           <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                 </p>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="accordion-items">
-                           <div class="accordion-header">
-                              <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                 What should I do if I receive a damaged or incorrect product?
-                                 <span class="aq-faq-icon"></span>
-                              </button>
-                           </div>
-                           <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                 </p>
-                              </div>
-                           </div>
-                        </div>
+                        @empty
+                           <p class="text-muted">{{ t('contact.no_faqs', 'No FAQs yet.') }}</p>
+                        @endforelse
                      </div>
                   </div>
                </div>

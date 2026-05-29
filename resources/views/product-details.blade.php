@@ -39,7 +39,7 @@
                            <div class="product-slider-nav slider-nav">
                               @foreach($product->images as $image)
                                  <div class="product-slider-nav-img">
-                                    <img src="{{ asset($image->path) }}" alt="{{ $product->name }}">
+                                    <img src="{{ media($image->path) }}" alt="{{ $product->name }}">
                                  </div>
                               @endforeach
                            </div>
@@ -49,11 +49,11 @@
                               <div class="product-slider-main slider-for p-relative">
                                  @foreach($product->images as $image)
                                     <div class="product-slider-main-img">
-                                       <img src="{{ asset($image->path) }}" alt="{{ $product->name }}">
+                                       <img src="{{ media($image->path) }}" alt="{{ $product->name }}">
                                     </div>
                                  @endforeach
                                  @if($product->images->isEmpty() && $primaryImage)
-                                    <div class="product-slider-main-img"><img src="{{ asset($primaryImage->path) }}" alt="{{ $product->name }}"></div>
+                                    <div class="product-slider-main-img"><img src="{{ media($primaryImage->path) }}" alt="{{ $product->name }}"></div>
                                  @endif
                               </div>
                            </div>
