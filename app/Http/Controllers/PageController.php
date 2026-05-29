@@ -22,7 +22,7 @@ class PageController extends Controller
         $featuredProducts = Product::active()->featured()->with(['images', 'colors', 'category'])->take(8)->get();
         $newProducts = Product::active()->new()->with(['images', 'colors', 'category'])->take(8)->get();
         $categories = Category::active()->roots()->orderBy('sort_order')->take(8)->get();
-        $brands = Brand::active()->orderBy('sort_order')->take(8)->get();
+        $brands = Brand::active()->orderBy('sort_order')->take(6)->get();
 
         return view('home', compact(
             'sliders', 'middleSliders', 'featuredProducts', 'newProducts', 'categories', 'brands'

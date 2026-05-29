@@ -87,166 +87,7 @@
                   </form>
                </div>
             </div>
-            <div class="row">
-               <div class="col-xl-3">
-                  <div class="aq-search-cat-wrap mb-30">
-                     <h4 class="aq-search-cat-title mb-35">Popular Searches</h4>
-                     <div class="aq-search-cat">
-                        <a href="{{ route('categories') }}">Top</a>
-                        <a href="{{ route('categories') }}">Dresses</a>
-                        <a href="{{ route('categories') }}">Shoes</a>
-                        <a href="{{ route('categories') }}">Accessories</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-xl-9">
-                  <div class="aq-search-product mb-30">
-                     <h4 class="aq-search-cat-title mb-35">Recently Viewed Products</h4>
-                     <div class="row row-cols-xl-4 row-cols-lg-4 row-cols-md-2 row-cols-sm-2 row-cols-1">
-                        <div class="col">
-                           <div class="aq-product-item aq-product-main mb-40" data-lazy="true">
-                              <div class="aq-product-thumb aq-img-hover-wrap p-relative mb-10">
-                                 <a href="product-details-default.html">
-                                    <img class="lazyload aq-product-img" src="{{ asset('assets/img/fashion-3/product/product-1/product-1.jpg') }}" alt="">
-                                    <img class="aq-img-hover lazyload" src="{{ asset('assets/img/fashion-3/product/product-1/product-hover.jpg') }}" alt="">
-                                 </a>
-                              </div>
-                              <div class="aq-product-content">
-                                 <span class="aqf-product-3-category">Jackets</span>
-                                 <h4 class="aq-product-title mb-5"><a href="product-details-default.html">Katrina - Chic Comfy Pair</a></h4>
-                                 <div class="aq-product-price">
-                                    <ins><span class="aq-product-new-price">$24.00</span></ins>
-                                 </div>
-                                 <div class="aq-product-color">
-                                    <ul>
-                                       <li class="aq-product-color-item aq-tooltip-top aq-color-swatch active">
-                                          <span class="aq-tooltip-item">Orange</span>
-                                          <span class="aq-product-color-value" data-bg-color="#FD8B4E"></span>
-                                          <img class="lazyload" data-src="{{ asset('assets/img/fashion-3/product/product-1/product-1.jpg') }}" src="{{ asset('assets/img/fashion-3/product/product-1/product-1.jpg') }}" alt="image-product">
-                                       </li>
-                                       <li class="aq-product-color-item aq-tooltip-top aq-color-swatch">
-                                          <span class="aq-tooltip-item">Sky Blue</span>
-                                          <span class="aq-product-color-value" data-bg-color="#B0C0D8"></span>
-                                          <img class="lazyload" data-src="{{ asset('assets/img/fashion-3/product/product-1/product-2.jpg') }}" src="{{ asset('assets/img/fashion-3/product/product-1/product-2.jpg') }}" alt="image-product">
-                                       </li>
-                                       <li class="aq-product-color-item aq-tooltip-top aq-color-swatch">
-                                          <span class="aq-tooltip-item">Olive</span>
-                                          <span class="aq-product-color-value" data-bg-color="#8F9673"></span>
-                                          <img class="lazyload" data-src="{{ asset('assets/img/fashion-3/product/product-1/product-3.jpg') }}" src="{{ asset('assets/img/fashion-3/product/product-1/product-3.jpg') }}" alt="image-product">
-                                       </li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col">
-                           <div class="aq-product-item aq-product-main mb-40" data-lazy="true">
-                              <div class="aq-product-thumb aq-img-hover-wrap p-relative mb-10">
-                                 <div class="aq-product-badge">
-                                    <span class="clr-sale">-5%</span>
-                                 </div>
-                                 <a href="product-details-default.html">
-                                    <img class="lazyload aq-product-img" src="{{ asset('assets/img/fashion-3/product/product-2/product-1.jpg') }}" alt="">
-                                    <img class="aq-img-hover lazyload" src="{{ asset('assets/img/fashion-3/product/product-2/product-hover.jpg') }}" alt="">
-                                 </a>
-                              </div>
-                              <div class="aq-product-content">
-                                 <span class="aqf-product-3-category">Sunglasses</span>
-                                 <h4 class="aq-product-title mb-5"><a href="product-details-default.html">Ray-Ban Round Fleck</a></h4>
-                                 <div class="aq-product-price">
-                                    <ins><span class="aq-product-new-price">$42.00</span></ins>
-                                 </div>
-                                 <div class="aq-product-color">
-                                    <ul>
-                                       <li class="aq-product-color-item aq-tooltip-top aq-color-swatch active">
-                                          <span class="aq-tooltip-item">Martini</span>
-                                          <span class="aq-product-color-value" data-bg-color="#B7A696"></span>
-                                          <img class="lazyload" data-src="{{ asset('assets/img/fashion-3/product/product-2/product-1.jpg') }}" src="{{ asset('assets/img/fashion-3/product/product-2/product-1.jpg') }}" alt="image-product">
-                                       </li>
-                                       <li class="aq-product-color-item aq-tooltip-top aq-color-swatch">
-                                          <span class="aq-tooltip-item">Rifle Green</span>
-                                          <span class="aq-product-color-value" data-bg-color="#494532"></span>
-                                          <img class="lazyload" data-src="{{ asset('assets/img/fashion-3/product/product-2/product-2.jpg') }}" src="{{ asset('assets/img/fashion-3/product/product-2/product-2.jpg') }}" alt="image-product">
-                                       </li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col">
-                           <div class="aq-product-item aq-product-main mb-40" data-lazy="true">
-                              <div class="aq-product-thumb aq-img-hover-wrap p-relative mb-10">
-                                 <a href="product-details-default.html">
-                                    <img class="lazyload aq-product-img" src="{{ asset('assets/img/fashion-3/product/product-3/product-1.jpg') }}" alt="">
-                                    <img class="aq-img-hover lazyload" src="{{ asset('assets/img/fashion-3/product/product-3/product-hover.jpg') }}" alt="">
-                                 </a>
-                              </div>
-                              <div class="aq-product-content">
-                                 <span class="aqf-product-3-category">T-Shirt</span>
-                                 <h4 class="aq-product-title mb-5"><a href="product-details-default.html">Rib Knit Polo Shirt</a></h4>
-                                 <div class="aq-product-price">
-                                    <ins><span class="aq-product-new-price">$30.00</span></ins>
-                                 </div>
-                                 <div class="aq-product-color">
-                                    <ul>
-                                       <li class="aq-product-color-item aq-tooltip-top aq-color-swatch active">
-                                          <span class="aq-tooltip-item">Wheat</span>
-                                          <span class="aq-product-color-value half-circle" data-bg-color="#F2E9DA"></span>
-                                          <img class="lazyload" data-src="{{ asset('assets/img/fashion-3/product/product-3/product-1.jpg') }}" src="{{ asset('assets/img/fashion-3/product/product-3/product-1.jpg') }}" alt="image-product">
-                                       </li>
-                                       <li class="aq-product-color-item aq-tooltip-top aq-color-swatch">
-                                          <span class="aq-tooltip-item">Cream</span>
-                                          <span class="aq-product-color-value half-circle" data-bg-color="#F2E7C1"></span>
-                                          <img class="lazyload" data-src="{{ asset('assets/img/fashion-3/product/product-3/product-2.jpg') }}" src="{{ asset('assets/img/fashion-3/product/product-3/product-2.jpg') }}" alt="image-product">
-                                       </li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col">
-                           <div class="aq-product-item aq-product-main mb-40" data-lazy="true">
-                              <div class="aq-product-thumb aq-img-hover-wrap p-relative mb-10">
-                                 <div class="aq-product-badge">
-                                    <span class="clr-new">New</span>
-                                 </div>
-                                 <a href="product-details-default.html">
-                                    <img class="lazyload aq-product-img" src="{{ asset('assets/img/fashion-3/product/product-4/product-1.jpg') }}" alt="">
-                                    <img class="aq-img-hover lazyload" src="{{ asset('assets/img/fashion-3/product/product-4/product-hover.jpg') }}" alt="">
-                                 </a>
-                              </div>
-                              <div class="aq-product-content">
-                                 <span class="aqf-product-3-category">Shoes</span>
-                                 <h4 class="aq-product-title mb-5"><a href="product-details-default.html">Old Money Suede Loafers</a></h4>
-                                 <div class="aq-product-price">
-                                    <ins><span class="aq-product-new-price">$44.00</span></ins>
-                                 </div>
-                                 <div class="aq-product-color">
-                                    <ul>
-                                       <li class="aq-product-color-item aq-tooltip-top aq-color-swatch active">
-                                          <span class="aq-tooltip-item">Beige</span>
-                                          <span class="aq-product-color-value" data-bg-color="#A99283"></span>
-                                          <img class="lazyload" data-src="{{ asset('assets/img/fashion-3/product/product-4/product-1.jpg') }}" src="{{ asset('assets/img/fashion-3/product/product-4/product-1.jpg') }}" alt="image-product">
-                                       </li>
-                                       <li class="aq-product-color-item aq-tooltip-top aq-color-swatch">
-                                          <span class="aq-tooltip-item">Echo Blue</span>
-                                          <span class="aq-product-color-value" data-bg-color="#B19169"></span>
-                                          <img class="lazyload" data-src="{{ asset('assets/img/fashion-3/product/product-4/product-2.jpg') }}" src="{{ asset('assets/img/fashion-3/product/product-4/product-2.jpg') }}" alt="image-product">
-                                       </li>
-                                       <li class="aq-product-color-item aq-tooltip-top aq-color-swatch">
-                                          <span class="aq-tooltip-item">Summer Gray</span>
-                                          <span class="aq-product-color-value" data-bg-color="#B1A8A4"></span>
-                                          <img class="lazyload" data-src="{{ asset('assets/img/fashion-3/product/product-4/product-3.jpg') }}" src="{{ asset('assets/img/fashion-3/product/product-4/product-3.jpg') }}" alt="image-product">
-                                       </li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
+            {{-- Popular searches / Recently viewed removed (hardcoded dummy data) --}}
          </div>
       </div>
    </div>
@@ -1080,14 +921,25 @@
       </div>
       <div class="aq-offcanvas-menu-wrap">
          <div class="aq-offcanvas-menu">
-            <nav></nav>
+            <nav>
+               <ul>
+                  @foreach(\App\Models\MenuItem::tree('header') as $item)
+                     <li>
+                        <a href="{{ $item->url ?: '#' }}" @if($item->open_in_new_tab) target="_blank" rel="noopener" @endif>{{ $item->label }}</a>
+                        @if($item->children->isNotEmpty())
+                           <ul class="sub-menu">
+                              @foreach($item->children as $child)
+                                 <li><a href="{{ $child->url ?: '#' }}" @if($child->open_in_new_tab) target="_blank" rel="noopener" @endif>{{ $child->label }}</a></li>
+                              @endforeach
+                           </ul>
+                        @endif
+                     </li>
+                  @endforeach
+               </ul>
+            </nav>
          </div>
       </div>
       <div class="aq-offcanvas-bottom">
-         <div class="aq-offcanvas-btn-wrap d-flex justify-content-between align-items-center">
-            <a class="aq-offcanvas-btn" href="#">Login</a>
-            <a class="aq-offcanvas-btn btn-black-bg" href="#">Wishlist</a>
-         </div>
          <div class="d-flex align-items-center justify-content-between">
             <div class="aq-header-top-menu-item aq-header-lang p-relative">
                <span class="aq-header-lang-toggle">{{ strtoupper(app()->getLocale()) }}</span>
@@ -1099,23 +951,6 @@
                   @endforeach
                </ul>
             </div>
-            <div class="aq-header-top-menu-item aq-header-currency p-relative">
-               <span class="aq-header-currency-toggle">USD</span>
-               <ul>
-                  <li>
-                     <a href="#">EUR</a>
-                  </li>
-                  <li>
-                     <a href="#">CHF</a>
-                  </li>
-                  <li>
-                     <a href="#">GBP</a>
-                  </li>
-                  <li>
-                     <a href="#">KWD</a>
-                  </li>
-               </ul>
-            </div>
          </div>
       </div>
    </div>
@@ -1124,19 +959,16 @@
    <!-- Body Overlay -->
    <div class="body-overlay"></div>
    <!-- Body Overlay -->
-    
-   <!-- bottom-sticky header -->
+
+   {{-- bottom-sticky header (mobile) — disabled --}}
+   @if(false)
    <div class="aq-bottom-menu d-md-none">
       <div class="container">
          <div class="row row-cols-5">
             <div class="col">
                <a href="#">
                   <div class="aq-bottom-menu-item">
-                     <i>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
-                           <path d="M14.6336 6.77452L8.38359 0.374602C8.1492 0.13474 7.83138 0 7.5 0C7.16862 0 6.8508 0.13474 6.61641 0.374602L0.366414 6.77452C0.249777 6.89307 0.157319 7.03418 0.0944167 7.18964C0.0315145 7.34511 -0.000577075 7.51183 7.85428e-06 7.68011V15.36C7.85428e-06 15.5297 0.0658559 15.6925 0.183066 15.8126C0.300276 15.9326 0.459247 16 0.625007 16H5.625C5.79076 16 5.94973 15.9326 6.06694 15.8126C6.18415 15.6925 6.25 15.5297 6.25 15.36V10.8801H8.75V15.36C8.75 15.5297 8.81585 15.6925 8.93306 15.8126C9.05027 15.9326 9.20924 16 9.375 16H14.375C14.5408 16 14.6997 15.9326 14.8169 15.8126C14.9341 15.6925 15 15.5297 15 15.36V7.68011C15.0006 7.51183 14.9685 7.34511 14.9056 7.18964C14.8427 7.03418 14.7502 6.89307 14.6336 6.77452ZM13.75 14.72H10V10.2401C10 10.0703 9.93415 9.90755 9.81694 9.78753C9.69973 9.66751 9.54076 9.60008 9.375 9.60008H5.625C5.45924 9.60008 5.30027 9.66751 5.18306 9.78753C5.06585 9.90755 5 10.0703 5 10.2401V14.72H1.25001V7.68011L7.5 1.28019L13.75 7.68011V14.72Z" fill="#343330"/>
-                        </svg>
-                     </i>
+                     <i></i>
                      <span>Home</span>
                   </div>
                </a>
@@ -1194,7 +1026,8 @@
          </div>
       </div>
    </div>
-   <!-- bottom-sticky header -->
+   @endif
+   <!-- bottom-sticky header end -->
 
 
    <header>
