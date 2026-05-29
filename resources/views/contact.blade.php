@@ -7,8 +7,8 @@
             <div class="row">
                <div class="col-lg-12">
                   <div class="aq-breadcrumb-top-heading text-center pb-60">
-                     <span class="aq-blog-inner-top-subtitle">{{ t('contact.subtitle', 'Get in Touch') }}</span>
-                     <h2 class="aq-blog-inner-top-title">{!! t('contact.title', 'Contact our experts <br> to start working together') !!}</h2>
+                     <span class="aq-blog-inner-top-subtitle">{{ t('contact.subtitle') }}</span>
+                     <h2 class="aq-blog-inner-top-title">{!! t('contact.title') !!}</h2>
                   </div>
                </div>
             </div>
@@ -31,8 +31,8 @@
                            <path opacity="0.4" d="M14.5138 6.77257C13.7204 6.77257 13.0625 6.11466 13.0625 5.3213V1.45126C13.0625 0.657907 13.7204 0 14.5138 0C15.3071 0 15.965 0.657907 15.965 1.45126V5.3213C15.965 6.11466 15.3071 6.77257 14.5138 6.77257Z" fill="currentcolor"/>
                         </svg>
                      </span>
-                     <h3 class="aq-contact-info-title">{{ t('contact.feedback', 'Feedbacks') }}</h3>
-                     <p>{{ t('contact.feedback_text', 'Speak to our Friendly team.') }}</p>
+                     <h3 class="aq-contact-info-title">{{ t('contact.feedback') }}</h3>
+                     <p>{{ t('contact.feedback_text') }}</p>
                      <a href="mailto:{{ setting('email', 'support@example.com') }}">{{ setting('email', 'support@example.com') }}</a>
                   </div>
                </div>
@@ -46,7 +46,7 @@
                         <path d="M32.9652 27.4955C32.9652 27.9155 32.8902 28.3505 32.7402 28.7705C32.6952 28.8905 32.6502 29.0105 32.5902 29.1305C32.3352 29.6705 32.0052 30.1805 31.5702 30.6605C30.8352 31.4705 30.0252 32.0555 29.1102 32.4305C29.0952 32.4305 29.0802 32.4455 29.0652 32.4455C28.1802 32.8055 27.2202 33.0005 26.1852 33.0005C24.6552 33.0005 23.0202 32.6405 21.2952 31.9055C19.5702 31.1705 17.8452 30.1805 16.1352 28.9355C15.5502 28.5005 14.9652 28.0655 14.4102 27.6005L19.3152 22.6955C19.7352 23.0105 20.1102 23.2505 20.4252 23.4155C20.5002 23.4455 20.5902 23.4905 20.6952 23.5355C20.8152 23.5805 20.9352 23.5955 21.0702 23.5955C21.3252 23.5955 21.5202 23.5055 21.6852 23.3405L22.8252 22.2155C23.2002 21.8405 23.5602 21.5555 23.9052 21.3755C24.2502 21.1655 24.5952 21.0605 24.9702 21.0605C25.2552 21.0605 25.5552 21.1205 25.8852 21.2555C26.2152 21.3905 26.5602 21.5855 26.9352 21.8405L31.9002 25.3655C32.2902 25.6355 32.5602 25.9505 32.7252 26.3255C32.8752 26.7005 32.9652 27.0755 32.9652 27.4955Z" fill="currentcolor"/>
                         </svg>
                      </span>
-                     <h3 class="aq-contact-info-title">{{ t('contact.call_us', 'Call Us') }}</h3>
+                     <h3 class="aq-contact-info-title">{{ t('contact.call_us') }}</h3>
                      <p>{{ setting('working_hours', 'Mon-Fri from 8am to 5pm') }}</p>
                      <a href="tel:{{ preg_replace('/\s+/', '', setting('phone', '+1 (555) 000-0000')) }}">{{ setting('phone', '+1 (555) 000-0000') }}</a>
                   </div>
@@ -59,8 +59,8 @@
                         <path d="M12.9965 17.1365C15.5424 17.1365 17.6062 15.0726 17.6062 12.5267C17.6062 9.98085 15.5424 7.91699 12.9965 7.91699C10.4506 7.91699 8.38672 9.98085 8.38672 12.5267C8.38672 15.0726 10.4506 17.1365 12.9965 17.1365Z" fill="white"/>
                         </svg>
                      </span>
-                     <h3 class="aq-contact-info-title">{{ t('contact.visit_us', 'Visit Us') }}</h3>
-                     <p>{{ t('contact.visit_us_text', 'Visit our office HQ.') }}</p>
+                     <h3 class="aq-contact-info-title">{{ t('contact.visit_us') }}</h3>
+                     <p>{{ t('contact.visit_us_text') }}</p>
                      <a href="#">{{ setting('address', '77 Robinson Road #33-01') }}</a>
                   </div>
                </div>
@@ -72,8 +72,8 @@
                         <path d="M20.5737 20.8976C20.3787 20.8976 20.1837 20.8526 20.0037 20.7326L15.3537 17.9576C14.1987 17.2676 13.3438 15.7526 13.3438 14.4176V8.26758C13.3438 7.65258 13.8537 7.14258 14.4687 7.14258C15.0837 7.14258 15.5937 7.65258 15.5937 8.26758V14.4176C15.5937 14.9576 16.0437 15.7526 16.5087 16.0226L21.1587 18.7976C21.6987 19.1126 21.8637 19.8026 21.5487 20.3426C21.3237 20.7026 20.9487 20.8976 20.5737 20.8976Z" fill="white"/>
                         </svg>
                      </span>
-                     <h3 class="aq-contact-info-title">{{ t('contact.open_time', 'Open Time:') }}</h3>
-                     <p>{{ t('contact.office_hours', 'Office opening hours') }}</p>
+                     <h3 class="aq-contact-info-title">{{ t('contact.open_time') }}</h3>
+                     <p>{{ t('contact.office_hours') }}</p>
                      <a href="#">{{ setting('working_hours', 'Mon-Fri from 8am to 5pm') }}</a>
                   </div>
                </div>
@@ -85,14 +85,16 @@
 
       <!-- contact area start -->
       <div class="aq-contact-ptb p-relative" data-bg-color="#F2F2F2">
+         @if(setting('map_embed'))
          <div class="aq-contact-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193596.26002818075!2d-74.1443121872927!3d40.69728463485858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1745055504744!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="{{ setting('map_embed') }}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
          </div>
+         @endif
          <div class="container">
             <div class="row justify-content-lg-end">
                <div class="col-lg-6">
                   <div class="aq-contact-us-wrap pt-120 pb-120">
-                     <h4 class="aq-contact-us-title mb-30">{{ t('contact.send_message', 'Send a Message') }}</h4>
+                     <h4 class="aq-contact-us-title mb-30">{{ t('contact.send_message') }}</h4>
                      @if(session('success'))
                         <div class="alert alert-success mb-20">{{ session('success') }}</div>
                      @endif
@@ -101,41 +103,41 @@
                         <div class="row">
                            <div class="col-lg-6">
                               <div class="aq-contact-form-input mb-20">
-                                 <label class="aq-form-label">{{ t('contact.name', 'Your Name') }} *</label>
-                                 <input class="aq-form-control h-56 brr-0" placeholder="{{ t('contact.name_placeholder', 'your name') }}" name="name" type="text" value="{{ old('name') }}">
+                                 <label class="aq-form-label">{{ t('contact.name') }} *</label>
+                                 <input class="aq-form-control h-56 brr-0" placeholder="{{ t('contact.name_placeholder') }}" name="name" type="text" value="{{ old('name') }}">
                                  @error('name')<small class="text-danger">{{ $message }}</small>@enderror
                               </div>
                            </div>
                            <div class="col-lg-6">
                               <div class="aq-contact-form-input mb-20">
-                                 <label class="aq-form-label">{{ t('contact.email', 'Email Address') }} *</label>
-                                 <input class="aq-form-control h-56 brr-0" placeholder="{{ t('contact.email_placeholder', 'your email') }}" name="email" type="email" value="{{ old('email') }}">
+                                 <label class="aq-form-label">{{ t('contact.email') }} *</label>
+                                 <input class="aq-form-control h-56 brr-0" placeholder="{{ t('contact.email_placeholder') }}" name="email" type="email" value="{{ old('email') }}">
                                  @error('email')<small class="text-danger">{{ $message }}</small>@enderror
                               </div>
                            </div>
                            <div class="col-lg-6">
                               <div class="aq-contact-form-input mb-20">
-                                 <label class="aq-form-label">{{ t('contact.phone', 'Phone') }}</label>
-                                 <input class="aq-form-control h-56 brr-0" placeholder="{{ t('contact.phone_placeholder', 'your phone') }}" name="phone" type="text" value="{{ old('phone') }}">
+                                 <label class="aq-form-label">{{ t('contact.phone') }}</label>
+                                 <input class="aq-form-control h-56 brr-0" placeholder="{{ t('contact.phone_placeholder') }}" name="phone" type="text" value="{{ old('phone') }}">
                                  @error('phone')<small class="text-danger">{{ $message }}</small>@enderror
                               </div>
                            </div>
                            <div class="col-lg-6">
                               <div class="aq-contact-form-input mb-20">
-                                 <label class="aq-form-label">{{ t('contact.subject', 'Subject') }}</label>
-                                 <input class="aq-form-control h-56 brr-0" placeholder="{{ t('contact.subject_placeholder', 'subject') }}" name="subject" type="text" value="{{ old('subject') }}">
+                                 <label class="aq-form-label">{{ t('contact.subject') }}</label>
+                                 <input class="aq-form-control h-56 brr-0" placeholder="{{ t('contact.subject_placeholder') }}" name="subject" type="text" value="{{ old('subject') }}">
                                  @error('subject')<small class="text-danger">{{ $message }}</small>@enderror
                               </div>
                            </div>
                            <div class="col-lg-12">
                               <div class="aq-contact-form-input mb-20">
-                                 <label class="aq-form-label">{{ t('contact.message', 'Your message') }} *</label>
-                                 <textarea class="aq-form-control brr-0" placeholder="{{ t('contact.message_placeholder', 'message') }}" name="message">{{ old('message') }}</textarea>
+                                 <label class="aq-form-label">{{ t('contact.message') }} *</label>
+                                 <textarea class="aq-form-control brr-0" placeholder="{{ t('contact.message_placeholder') }}" name="message">{{ old('message') }}</textarea>
                                  @error('message')<small class="text-danger">{{ $message }}</small>@enderror
                               </div>
                               <div class="aq-contact-form-btn">
                                  <button class="aq-btn-subscribe w-100" type="submit">
-                                    {{ t('contact.send', 'Send message') }}
+                                    {{ t('contact.send') }}
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
                                     <path d="M0.898438 6.90039H12.8984" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M6.89844 0.900391L12.8984 6.90039L6.89844 12.9004" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -160,8 +162,8 @@
             <div class="row">
                <div class="col-lg-5">
                   <div class="aq-contact-faq-title-box mb-40">
-                     <span class="aq-section-subtitle mb-10">{{ t('contact.faq_subtitle', 'Faq’s section') }}</span>
-                     <h4 class="aq-section-title fs-54 ff-onest-med mb-20">{!! t('contact.faq_title', 'Frequently <br> Asked Questions') !!}</h4>
+                     <span class="aq-section-subtitle mb-10">{{ t('contact.faq_subtitle') }}</span>
+                     <h4 class="aq-section-title fs-54 ff-onest-med mb-20">{!! t('contact.faq_title') !!}</h4>
                      <div class="aq-contact-faq-btn">
                         <a class="aq-btn-black" href="#">Contact us
                            <span>
@@ -192,7 +194,7 @@
                               </div>
                            </div>
                         @empty
-                           <p class="text-muted">{{ t('contact.no_faqs', 'No FAQs yet.') }}</p>
+                           <p class="text-muted">{{ t('contact.no_faqs') }}</p>
                         @endforelse
                      </div>
                   </div>

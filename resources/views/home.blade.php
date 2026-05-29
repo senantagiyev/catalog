@@ -24,7 +24,7 @@
                                  @if($slider->button_text)
                                     <a class="aq-btn-black" href="{{ $slider->link ?: route('products') }}">{{ $slider->button_text }}</a>
                                  @else
-                                    <a class="aq-btn-black" href="{{ route('products') }}">{{ t('home.shop_collection', 'Shop Collection') }}</a>
+                                    <a class="aq-btn-black" href="{{ route('products') }}">{{ t('home.shop_collection') }}</a>
                                  @endif
                               </div>
                            </div>
@@ -47,12 +47,12 @@
                <div class="row align-items-end">
                   <div class="col-md-8">
                      <div class="aqf-collection-title-box text-center text-md-start mb-15">
-                        <span class="aq-section-subtitle ff-satoshi-med mb-10">{{ t('home.featured_subtitle', 'Best of the season') }}</span>
-                        <h4 class="aq-section-title ff-satoshi-med fs-38 mb-0">{{ t('home.featured_products', 'Featured products') }}</h4>
+                        <span class="aq-section-subtitle ff-satoshi-med mb-10">{{ t('home.featured_subtitle') }}</span>
+                        <h4 class="aq-section-title ff-satoshi-med fs-38 mb-0">{{ t('home.featured_products') }}</h4>
                      </div>
                   </div>
                   <div class="col-md-4 text-md-end">
-                     <a class="aq-btn-black" href="{{ route('products') }}">{{ t('home.view_all', 'View All') }}</a>
+                     <a class="aq-btn-black" href="{{ route('products') }}">{{ t('home.view_all') }}</a>
                   </div>
                </div>
             </div>
@@ -74,8 +74,8 @@
                <div class="row align-items-end">
                   <div class="col-md-12">
                      <div class="aqf-collection-title-box text-center mb-15">
-                        <span class="aq-section-subtitle ff-satoshi-med mb-10">{{ t('home.shop_by_category_subtitle', 'Discover the new') }}</span>
-                        <h4 class="aq-section-title ff-satoshi-med fs-38 mb-0">{{ t('home.shop_by_category', 'Shop by Category') }}</h4>
+                        <span class="aq-section-subtitle ff-satoshi-med mb-10">{{ t('home.shop_by_category_subtitle') }}</span>
+                        <h4 class="aq-section-title ff-satoshi-med fs-38 mb-0">{{ t('home.shop_by_category') }}</h4>
                      </div>
                   </div>
                </div>
@@ -117,7 +117,7 @@
                            @endif
                            <h2 class="aq-categories-banner-item-title">{{ $slider->title }}</h2>
                            <div class="aq-categories-banner-item-btn">
-                              <a class="aq-line-anim" href="{{ $slider->link ?: route('products') }}">{{ $slider->button_text ?: t('common.shop_now', 'Shop Now') }}
+                              <a class="aq-line-anim" href="{{ $slider->link ?: route('products') }}">{{ $slider->button_text ?: t('common.shop_now') }}
                                  <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12" fill="none">
                                        <path d="M13.7498 5.97092H0.75M13.7498 5.97092L8.50684 0.75M13.7498 5.97092L8.50684 11.1923" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -142,12 +142,12 @@
                <div class="row align-items-end">
                   <div class="col-md-8">
                      <div class="aqf-collection-title-box text-center text-md-start mb-15">
-                        <span class="aq-section-subtitle ff-satoshi-med mb-10">{{ t('home.new_arrivals_subtitle', 'Just landed') }}</span>
-                        <h4 class="aq-section-title ff-satoshi-med fs-38 mb-0">{{ t('home.new_arrivals', 'New Arrivals') }}</h4>
+                        <span class="aq-section-subtitle ff-satoshi-med mb-10">{{ t('home.new_arrivals_subtitle') }}</span>
+                        <h4 class="aq-section-title ff-satoshi-med fs-38 mb-0">{{ t('home.new_arrivals') }}</h4>
                      </div>
                   </div>
                   <div class="col-md-4 text-md-end">
-                     <a class="aq-btn-black" href="{{ route('products') }}">{{ t('home.view_all', 'View All') }}</a>
+                     <a class="aq-btn-black" href="{{ route('products') }}">{{ t('home.view_all') }}</a>
                   </div>
                </div>
             </div>
@@ -170,7 +170,7 @@
                <div class="row align-items-end">
                   <div class="col-md-12">
                      <div class="aqf-collection-title-box text-center mb-15">
-                        <h4 class="aq-section-title ff-satoshi-med fs-38 mb-0">{{ t('home.popular_brands', 'Popular Brands') }}</h4>
+                        <h4 class="aq-section-title ff-satoshi-med fs-38 mb-0">{{ t('home.popular_brands') }}</h4>
                      </div>
                   </div>
                </div>

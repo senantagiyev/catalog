@@ -11,9 +11,9 @@
                <div class="col-xl-12">
                   <div class="pd-breadcrumb-content">
                      <div class="pd-breadcrumb-list">
-                        <span><a href="{{ route('home') }}">{{ t('nav.home', 'home') }}</a></span>
+                        <span><a href="{{ route('home') }}">{{ t('nav.home') }}</a></span>
                         <span>/</span>
-                        <span><a href="{{ route('products') }}">{{ t('nav.shop', 'shop') }}</a></span>
+                        <span><a href="{{ route('products') }}">{{ t('nav.shop') }}</a></span>
                         @if($product->category)
                            <span>/</span>
                            <span><a href="{{ route('products', ['category' => $product->category->slug]) }}">{{ $product->category->name }}</a></span>
@@ -72,12 +72,12 @@
                      <h2 class="aq-product-details-title mb-15">{{ $product->name }}</h2>
 
                      <div class="aq-product-details-meta mb-15">
-                        <span class="me-15">{{ t('product.sku', 'SKU') }}: <strong>{{ $product->sku }}</strong></span>
+                        <span class="me-15">{{ t('product.sku') }}: <strong>{{ $product->sku }}</strong></span>
                         @if($product->brand)
-                           <span class="me-15">{{ t('product.brand', 'Brand') }}: <a href="{{ route('products', ['brand' => $product->brand->slug]) }}"><strong>{{ $product->brand->name }}</strong></a></span>
+                           <span class="me-15">{{ t('product.brand') }}: <a href="{{ route('products', ['brand' => $product->brand->slug]) }}"><strong>{{ $product->brand->name }}</strong></a></span>
                         @endif
                         <span class="aq-stock-badge {{ $product->stock > 0 ? 'in-stock text-success' : 'out-stock text-danger' }}">
-                           {{ $product->stock > 0 ? t('product.in_stock', 'In Stock') : t('product.out_of_stock', 'Out of Stock') }}
+                           {{ $product->stock > 0 ? t('product.in_stock') : t('product.out_of_stock') }}
                         </span>
                      </div>
 
@@ -98,7 +98,7 @@
 
                      @if($product->colors->isNotEmpty())
                         <div class="aq-product-details-color mb-20">
-                           <h4 class="mb-10">{{ t('product.color', 'Color') }}</h4>
+                           <h4 class="mb-10">{{ t('product.color') }}</h4>
                            <ul class="d-flex flex-wrap list-unstyled gap-2">
                               @foreach($product->colors as $color)
                                  <li class="aq-product-color-item aq-tooltip-top aq-color-swatch" title="{{ $color->name }}">
@@ -112,7 +112,7 @@
 
                      @if($product->sizes->isNotEmpty())
                         <div class="aq-product-details-size mb-20">
-                           <h4 class="mb-10">{{ t('product.size', 'Size') }}</h4>
+                           <h4 class="mb-10">{{ t('product.size') }}</h4>
                            <ul class="d-flex flex-wrap list-unstyled gap-2">
                               @foreach($product->sizes as $size)
                                  <li>
@@ -124,12 +124,12 @@
                      @endif
 
                      <div class="aq-product-details-action mb-30">
-                        <button class="aq-btn-black" type="button" {{ $product->stock <= 0 ? 'disabled' : '' }}>{{ t('product.add_to_cart', 'Add to Cart') }}</button>
+                        <button class="aq-btn-black" type="button" {{ $product->stock <= 0 ? 'disabled' : '' }}>{{ t('product.add_to_cart') }}</button>
                      </div>
 
                      @if($product->tags->isNotEmpty())
                         <div class="aq-product-details-tags mb-20">
-                           <strong>{{ t('product.tags', 'Tags') }}:</strong>
+                           <strong>{{ t('product.tags') }}:</strong>
                            @foreach($product->tags as $tag)
                               <span class="badge bg-light text-dark">{{ $tag->name }}</span>
                            @endforeach
@@ -142,7 +142,7 @@
             @if($product->description)
                <div class="row pt-60">
                   <div class="col-xl-12">
-                     <h3 class="mb-20">{{ t('product.description', 'Description') }}</h3>
+                     <h3 class="mb-20">{{ t('product.description') }}</h3>
                      <div class="aq-product-details-description">
                         {!! $product->description !!}
                      </div>
@@ -161,7 +161,7 @@
                <div class="row">
                   <div class="col-md-12">
                      <div class="aqf-collection-title-box text-center mb-15">
-                        <h4 class="aq-section-title ff-satoshi-med fs-38 mb-0">{{ t('product.related_products', 'Related Products') }}</h4>
+                        <h4 class="aq-section-title ff-satoshi-med fs-38 mb-0">{{ t('product.related_products') }}</h4>
                      </div>
                   </div>
                </div>

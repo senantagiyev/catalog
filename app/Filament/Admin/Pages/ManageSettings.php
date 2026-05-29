@@ -45,6 +45,7 @@ class ManageSettings extends Page implements HasForms
             'site_name' => ['translatable' => true, 'type' => 'string'],
             'logo' => ['translatable' => false, 'type' => 'string'],
             'favicon' => ['translatable' => false, 'type' => 'string'],
+            'loading_image' => ['translatable' => false, 'type' => 'string'],
             'primary_color' => ['translatable' => false, 'type' => 'string'],
         ],
         'contact' => [
@@ -52,6 +53,7 @@ class ManageSettings extends Page implements HasForms
             'email' => ['translatable' => false, 'type' => 'string'],
             'address' => ['translatable' => true, 'type' => 'string'],
             'working_hours' => ['translatable' => true, 'type' => 'string'],
+            'map_embed' => ['translatable' => false, 'type' => 'string'],
         ],
         'social' => [
             'facebook' => ['translatable' => false, 'type' => 'string'],
@@ -94,8 +96,9 @@ class ManageSettings extends Page implements HasForms
                     Tab::make('General')->schema([
                         Section::make('Brand')->schema([
                             ...$this->translatableInputs('general.site_name', 'Site name'),
-                            FileUpload::make('general.logo')->image()->disk('public')->directory('settings'),
-                            FileUpload::make('general.favicon')->image()->disk('public')->directory('settings'),
+                            FileUpload::make('general.logo')->label('Logo')->image()->disk('public')->directory('settings'),
+                            FileUpload::make('general.favicon')->label('Favicon')->image()->disk('public')->directory('settings'),
+                            FileUpload::make('general.loading_image')->label('Loading / preloader image')->image()->disk('public')->directory('settings'),
                             ColorPicker::make('general.primary_color'),
                         ]),
                     ]),
@@ -105,6 +108,7 @@ class ManageSettings extends Page implements HasForms
                             TextInput::make('contact.email')->email(),
                             ...$this->translatableInputs('contact.address', 'Address', textarea: true),
                             ...$this->translatableInputs('contact.working_hours', 'Working hours'),
+                            Textarea::make('contact.map_embed')->label('Google Maps embed URL')->rows(2)->helperText('Paste the src URL from the Google Maps embed iframe.'),
                         ]),
                     ]),
                     Tab::make('Social')->schema([

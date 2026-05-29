@@ -8,13 +8,13 @@
                <div class="col-xl-12">
                   <div class="aq-breadcrumb-wrap text-center">
                      <div class="pd-breadcrumb-list mb-10">
-                        <span><a href="{{ route('home') }}">{{ t('nav.home', 'home') }}</a></span>
+                        <span><a href="{{ route('home') }}">{{ t('nav.home') }}</a></span>
                         <span>/</span>
-                        <span><a href="{{ route('products') }}">{{ t('nav.shop', 'shop') }}</a></span>
+                        <span><a href="{{ route('products') }}">{{ t('nav.shop') }}</a></span>
                      </div>
                      <div class="aq-breadcrumb-content">
-                        <h2 class="aq-breadcrumb-title fs-44">{{ t('products.title', 'Shop') }}</h2>
-                        <p>{{ t('products.subtitle', 'Shop through our latest selection of Fashion') }}</p>
+                        <h2 class="aq-breadcrumb-title fs-44">{{ t('products.title') }}</h2>
+                        <p>{{ t('products.subtitle') }}</p>
                      </div>
                   </div>
                </div>
@@ -31,11 +31,11 @@
                   <aside class="aqf-shop-sidebar mb-50">
                      <!-- categories filter -->
                      <div class="aqf-shop-widget mb-40">
-                        <h4 class="aqf-shop-widget-title mb-20">{{ t('products.all_categories', 'All Categories') }}</h4>
+                        <h4 class="aqf-shop-widget-title mb-20">{{ t('products.all_categories') }}</h4>
                         <ul class="aqf-shop-cat-list list-unstyled">
                            <li class="mb-10">
                               <a href="{{ route('products') }}" class="{{ ! request('category') ? 'fw-bold' : '' }}">
-                                 {{ t('products.all', 'All') }}
+                                 {{ t('products.all') }}
                               </a>
                            </li>
                            @foreach($categories as $category)
@@ -50,7 +50,7 @@
 
                      <!-- brands filter -->
                      <div class="aqf-shop-widget mb-40">
-                        <h4 class="aqf-shop-widget-title mb-20">{{ t('products.brands', 'Brands') }}</h4>
+                        <h4 class="aqf-shop-widget-title mb-20">{{ t('products.brands') }}</h4>
                         <ul class="aqf-shop-cat-list list-unstyled">
                            @foreach($brands as $brand)
                               <li class="mb-10">
@@ -64,19 +64,19 @@
 
                      <!-- price filter -->
                      <div class="aqf-shop-widget mb-40">
-                        <h4 class="aqf-shop-widget-title mb-20">{{ t('products.price', 'Price') }}</h4>
+                        <h4 class="aqf-shop-widget-title mb-20">{{ t('products.price') }}</h4>
                         <form method="GET" action="{{ route('products') }}">
                            @if(request('category'))<input type="hidden" name="category" value="{{ request('category') }}">@endif
                            @if(request('brand'))<input type="hidden" name="brand" value="{{ request('brand') }}">@endif
                            <div class="row gx-2">
                               <div class="col-6">
-                                 <input class="form-control" type="number" min="0" name="min_price" placeholder="{{ t('products.min', 'Min') }}" value="{{ request('min_price') }}">
+                                 <input class="form-control" type="number" min="0" name="min_price" placeholder="{{ t('products.min') }}" value="{{ request('min_price') }}">
                               </div>
                               <div class="col-6">
-                                 <input class="form-control" type="number" min="0" name="max_price" placeholder="{{ t('products.max', 'Max') }}" value="{{ request('max_price') }}">
+                                 <input class="form-control" type="number" min="0" name="max_price" placeholder="{{ t('products.max') }}" value="{{ request('max_price') }}">
                               </div>
                            </div>
-                           <button type="submit" class="aq-btn-black mt-15 w-100">{{ t('products.filter', 'Filter') }}</button>
+                           <button type="submit" class="aq-btn-black mt-15 w-100">{{ t('products.filter') }}</button>
                         </form>
                      </div>
                   </aside>
@@ -85,25 +85,25 @@
                   <!-- sort dropdown -->
                   <div class="aqf-shop-sort d-flex justify-content-between align-items-center mb-30">
                      <div class="aqf-shop-result">
-                        <p class="mb-0">{{ t('products.showing', 'Showing') }} {{ $products->firstItem() ?? 0 }}-{{ $products->lastItem() ?? 0 }} {{ t('common.of', 'of') }} {{ $products->total() }}</p>
+                        <p class="mb-0">{{ t('products.showing') }} {{ $products->firstItem() ?? 0 }}-{{ $products->lastItem() ?? 0 }} {{ t('common.of') }} {{ $products->total() }}</p>
                      </div>
                      <form method="GET" action="{{ route('products') }}" class="d-flex align-items-center">
                         @foreach(request()->except(['sort','page']) as $k => $v)
                            <input type="hidden" name="{{ $k }}" value="{{ $v }}">
                         @endforeach
-                        <label class="me-10">{{ t('products.sort_by', 'Sort by') }}:</label>
+                        <label class="me-10">{{ t('products.sort_by') }}:</label>
                         <select name="sort" class="form-select" onchange="this.form.submit()">
-                           <option value="latest" {{ request('sort','latest') === 'latest' ? 'selected' : '' }}>{{ t('products.sort_latest', 'Latest') }}</option>
-                           <option value="price_asc" {{ request('sort') === 'price_asc' ? 'selected' : '' }}>{{ t('products.sort_price_asc', 'Price: Low to High') }}</option>
-                           <option value="price_desc" {{ request('sort') === 'price_desc' ? 'selected' : '' }}>{{ t('products.sort_price_desc', 'Price: High to Low') }}</option>
-                           <option value="name" {{ request('sort') === 'name' ? 'selected' : '' }}>{{ t('products.sort_name', 'Name') }}</option>
+                           <option value="latest" {{ request('sort') === 'latest' ? 'selected' : '' }}>{{ t('products.sort_latest') }}</option>
+                           <option value="price_asc" {{ request('sort') === 'price_asc' ? 'selected' : '' }}>{{ t('products.sort_price_asc') }}</option>
+                           <option value="price_desc" {{ request('sort') === 'price_desc' ? 'selected' : '' }}>{{ t('products.sort_price_desc') }}</option>
+                           <option value="name" {{ request('sort') === 'name' ? 'selected' : '' }}>{{ t('products.sort_name') }}</option>
                         </select>
                      </form>
                   </div>
 
                   <!-- products grid -->
                   @if($products->isEmpty())
-                     <div class="alert alert-info">{{ t('products.no_results', 'No products found.') }}</div>
+                     <div class="alert alert-info">{{ t('products.no_results') }}</div>
                   @else
                      <div class="row row-cols-xl-3 row-cols-md-2 row-cols-1">
                         @foreach($products as $product)
@@ -115,7 +115,7 @@
 
                      <!-- pagination -->
                      <div class="aqf-shop-pagination mt-30 d-flex justify-content-center">
-                        {{ $products->links() }}
+                        {{ $products->links('vendor.pagination.theme') }}
                      </div>
                   @endif
                </div>

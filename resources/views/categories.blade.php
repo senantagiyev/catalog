@@ -9,11 +9,11 @@
                <div class="col-xl-12">
                   <div class="aq-breadcrumb-wrap">
                      <div class="aq-breadcrumb-content">
-                        <h2 class="aq-breadcrumb-title fs-44">{{ t('categories.title', 'Only Categories') }}</h2>
+                        <h2 class="aq-breadcrumb-title fs-44">{{ t('categories.title') }}</h2>
                         <div class="pd-breadcrumb-list mb-10">
-                           <span><a href="{{ route('home') }}">{{ t('nav.home', 'home') }}</a></span>
+                           <span><a href="{{ route('home') }}">{{ t('nav.home') }}</a></span>
                            <span>/</span>
-                           <span><a href="{{ route('categories') }}">{{ t('categories.title', 'Only Categories') }}</a></span>
+                           <span><a href="{{ route('categories') }}">{{ t('categories.title') }}</a></span>
                         </div>
                      </div>
                   </div>
@@ -39,10 +39,10 @@
                                  </video>
                               </div>
                               <div class="aq-categories-banner-item-content">
-                                 <span class="aq-categories-banner-item-sub">{{ t('categories.banner_subtitle', 'Sale 20% off all store') }}</span>
-                                 <h2 class="aq-categories-banner-item-title">{!! t('categories.banner_title', 'Get the Best <br> Collection 2025') !!}</h2>
+                                 <span class="aq-categories-banner-item-sub">{{ t('categories.banner_subtitle') }}</span>
+                                 <h2 class="aq-categories-banner-item-title">{!! t('categories.banner_title') !!}</h2>
                                  <div class="aq-categories-banner-item-btn">
-                                    <a class="aq-line-anim" href="{{ route('products') }}">{{ t('common.shop_now', 'Shop Now') }} <span>
+                                    <a class="aq-line-anim" href="{{ route('products') }}">{{ t('common.shop_now') }} <span>
                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12" fill="none">
                                           <path d="M13.7498 5.97092H0.75M13.7498 5.97092L8.50684 0.75M13.7498 5.97092L8.50684 11.1923" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                        </svg>
@@ -93,7 +93,7 @@
                      </div>
                      <div class="aq-categories-item-content">
                         <h2 class="aq-categories-item-title"><a class="aq-line-anim" href="{{ route('products', ['category' => $category->slug]) }}">{{ $category->name }}</a></h2>
-                        <span>{{ $category->products_count ?? 0 }} {{ t('common.products', 'Products') }}</span>
+                        <span>{{ $category->products_count ?? 0 }} {{ t('common.products') }}</span>
                      </div>
                   </div>
                </div>
@@ -226,14 +226,14 @@
             <div class="row">
                <div class="col-xl-12">
                   <div class="aq-categories-main-result text-center mb-35 mt-35">
-                     <p>{{ t('common.showing', 'Showing') }} {{ $categories->count() }} {{ t('common.of', 'of') }} {{ $categories->count() }} {{ t('common.categories', 'categories') }}</p>
+                     <p>{{ t('common.showing') }} {{ $categories->count() }} {{ t('common.of') }} {{ $categories->count() }} {{ t('common.categories') }}</p>
                      <div class="aq-categories-main-result-bar">
                         <span data-width="40%" style="width: 40%;"></span>
                      </div>
                   </div>
                   <div class="aq-categories-main-more text-center">
                      <a href="{{ route('products') }}" class="aq-btn-white btn-square-bg btn-border-gray">
-                        {{ t('common.load_more', 'Load More') }}
+                        {{ t('common.load_more') }}
                         <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <path d="M13.0003 1.698V5.2986H9.39966" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                            <path d="M11.4933 8.29916C11.1032 9.40329 10.3649 10.3507 9.38948 10.9987C8.41408 11.6467 7.2545 11.9601 6.08548 11.8917C4.91647 11.8233 3.80134 11.3768 2.90816 10.6195C2.01497 9.86225 1.3921 8.83518 1.13343 7.69309C0.874748 6.551 0.99427 5.35578 1.47398 4.28753C1.95369 3.21928 2.7676 2.33588 3.79306 1.77045C4.81852 1.20502 5.99998 0.988199 7.15939 1.15265C8.3188 1.31711 9.39335 1.85393 10.2211 2.68222L12.9996 5.29866" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>

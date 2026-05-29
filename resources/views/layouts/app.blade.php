@@ -48,10 +48,10 @@
                         <circle stroke="red" cx="190" cy="190" r="180" stroke-width="6" stroke-linecap="round"></circle> 
                      </svg>
                   </div>
-                  <img src="{{ asset('assets/img/logo/favicon.png') }}" alt="">
+                  <img src="{{ media(setting('loading_image') ?: setting('logo'), 'assets/img/logo/favicon.png') }}" alt="">
                </div>
-               <h3 class="aq-preloader-title">Bazaro</h3>
-               <p class="aq-preloader-subtitle">Loading..</p>
+               <h3 class="aq-preloader-title">{{ setting('site_name', '14innocent') }}</h3>
+               <p class="aq-preloader-subtitle">{{ t('common.loading') }}</p>
             </div>
          </div>
       </div>  
@@ -78,7 +78,7 @@
             <div class="row">
                <div class="col-xl-12">
                   <form action="{{ route('products') }}" method="GET" class="aq-search-input p-relative mb-60">
-                     <input type="text" name="search" value="{{ request('search') }}" placeholder="{{ t('search.placeholder', 'What are you looking for?') }}">
+                     <input type="text" name="search" value="{{ request('search') }}" placeholder="{{ t('search.placeholder') }}">
                      <button type="submit" class="aq-search-input-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                            <path d="M13.6792 12.6197C13.3863 12.3268 12.9114 12.3268 12.6185 12.6197C12.3256 12.9126 12.3256 13.3875 12.6185 13.6804L13.1489 13.15L13.6792 12.6197ZM13.1489 13.15L12.6185 13.6804L16.2185 17.2803L16.7489 16.75L17.2792 16.2197L13.6792 12.6197L13.1489 13.15ZM15.1499 7.94997H15.8999C15.8999 3.55932 12.3406 0 7.94997 0V0.75V1.5C11.5122 1.5 14.3999 4.38775 14.3999 7.94997H15.1499ZM7.94997 0.75V0C3.55932 0 0 3.55932 0 7.94997H0.75H1.5C1.5 4.38775 4.38775 1.5 7.94997 1.5V0.75ZM0.75 7.94997H0C0 12.3406 3.55932 15.8999 7.94997 15.8999V15.1499V14.3999C4.38775 14.3999 1.5 11.5122 1.5 7.94997H0.75ZM7.94997 15.1499V15.8999C12.3406 15.8999 15.8999 12.3406 15.8999 7.94997H15.1499H14.3999C14.3999 11.5122 11.5122 14.3999 7.94997 14.3999V15.1499Z" fill="currentcolor"/>
@@ -1067,7 +1067,7 @@
    <div class="aq-offcanvas-wrap">
       <div class="aq-offcanvas-top d-flex align-items-center justify-content-between">
          <div class="aq-offcanvas-logo">
-            <a href="#"><img width="115" src="{{ asset('assets/img/logo/logo.png') }}" alt=""></a>
+            <a href="{{ route('home') }}"><img width="115" src="{{ media(setting('logo'), 'assets/img/logo/logo.png') }}" alt="{{ setting('site_name', '14innocent') }}"></a>
          </div>
          <div class="aq-offcanvas-close">
             <span>
@@ -1294,31 +1294,25 @@
                </div>
                <div class="col-xl-3 col-4">
                   <div class="aq-header-logo text-center text-xl-start">
-                     <a href="{{ route('home') }}"><img data-width="130" src="{{ asset(setting('logo', 'assets/img/logo/logo.png')) }}" alt="{{ setting('site_name', 'Bazaro') }}"></a>
+                     <a href="{{ route('home') }}"><img data-width="130" src="{{ media(setting('logo'), 'assets/img/logo/logo.png') }}" alt="{{ setting('site_name', '14innocent') }}"></a>
                   </div>
                </div>
                <div class="col-xl-6 d-none d-xl-block">
                   <div class="aq-header-menu menu-height-62 menu-black text-center">
                      <nav class="aq-mobile-menu-active">
                         <ul>
-                           <li>
-                              <a href="{{ route('home') }}">{{ t('nav.home', 'Home') }}</a>
-                           </li>
-                           <li>
-                              <a href="{{ route('categories') }}">{{ t('nav.categories', 'Categories') }}</a>
-                           </li>
-                           <li>
-                              <a href="{{ route('products') }}">{{ t('nav.shop', 'Shop') }}</a>
-                           </li>
-                           <li>
-                              <a href="{{ route('product.details') }}">{{ t('nav.product', 'Product') }}</a>
-                           </li>
-                           <li>
-                              <a href="{{ route('store') }}">{{ t('nav.store', 'Store') }}</a>
-                           </li>
-                           <li>
-                              <a href="{{ route('contact') }}">{{ t('nav.contact', 'Contact') }}</a>
-                           </li>
+                           @foreach(\App\Models\MenuItem::tree('header') as $item)
+                              <li @if($item->children->isNotEmpty()) class="has-dropdown" @endif>
+                                 <a href="{{ $item->url ?: '#' }}" @if($item->open_in_new_tab) target="_blank" rel="noopener" @endif>{{ $item->label }}</a>
+                                 @if($item->children->isNotEmpty())
+                                    <ul class="submenu">
+                                       @foreach($item->children as $child)
+                                          <li><a href="{{ $child->url ?: '#' }}" @if($child->open_in_new_tab) target="_blank" rel="noopener" @endif>{{ $child->label }}</a></li>
+                                       @endforeach
+                                    </ul>
+                                 @endif
+                              </li>
+                           @endforeach
                         </ul>
                      </nav>
                   </div>
@@ -1335,35 +1329,7 @@
                               </i>
                            </button>
                         </li>
-                        <li class="aq-header-top-account d-none d-md-inline-block">
-                           <button data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
-                              <i>
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="20" viewBox="0 0 17 20" fill="none">
-                                    <path d="M16.212 18.75C16.212 15.267 12.747 12.45 8.481 12.45C4.215 12.45 0.75 15.267 0.75 18.75M12.9805 5.25C12.9805 7.73528 10.9657 9.75 8.48047 9.75C5.99519 9.75 3.98047 7.73528 3.98047 5.25C3.98047 2.76472 5.99519 0.75 8.48047 0.75C10.9657 0.75 12.9805 2.76472 12.9805 5.25Z" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                 </svg>
-                              </i>
-                           </button>
-                        </li>
-                        <li class="aq-header-top-wishlist d-none d-md-inline-block">
-                           <button class="aq-wishlist-btn">
-                              <span class="count-box">2</span>
-                              <i>
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
-                                    <path d="M6.50726 4.80303C5.44195 5.14334 4.68503 6.09974 4.59044 7.22502M10.4856 18.6038C12.6562 17.2679 14.6755 15.6957 16.5073 13.9152C17.7951 12.633 18.7756 11.0698 19.3735 9.3454C20.4494 6.00032 19.1927 2.17084 15.6755 1.03753C13.827 0.442448 11.8081 0.782566 10.2505 1.95149C8.69225 0.783989 6.67412 0.443991 4.82552 1.03753C1.30833 2.17084 0.0425004 6.00032 1.11845 9.3454C1.71636 11.0698 2.69679 12.633 3.98465 13.9152C5.81647 15.6957 7.83575 17.2679 10.0064 18.6038L10.2414 18.75L10.4856 18.6038Z" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                 </svg>
-                              </i>
-                           </button>
-                        </li>
-                        <li class="aq-header-top-cart aq-cart-btn">
-                           <button>
-                              <span class="count-box">3</span>
-                              <i>
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                                    <path d="M5.48681 5.07041C5.48681 2.68433 7.4211 0.750039 9.80717 0.750039C10.9562 0.74517 12.0598 1.1982 12.874 2.00895C13.6882 2.81971 14.1459 3.92139 14.1458 5.07041M6.84107 9.57384H6.88684M12.6721 9.57388H12.7179M5.62368 19.972H13.9715C17.0379 19.972 19.3903 18.8645 18.7221 14.4068L17.944 8.3656C17.5321 6.14134 16.1134 5.29008 14.8685 5.29008H4.69004C3.42688 5.29008 2.0905 6.20542 1.61453 8.3656L0.836493 14.4068C0.268988 18.361 2.55732 19.972 5.62368 19.972Z" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                 </svg>
-                              </i>
-                           </button>
-                        </li>
+                        {{-- Account / wishlist / cart deactivated until backend is ready --}}
                      </ul>
                   </div>
                </div>
@@ -1386,23 +1352,23 @@
                <div class="row">
                   <div class="col-xxl-4 col-xl-3 col-lg-4 col-md-7">
                      <div class="aq-footer-widget aq-footer-col-2-1 mb-90">
-                        <h2 class="aq-footer-widget-title mb-5">{{ t('footer.newsletter', 'Newsletter.') }}</h2>
+                        <h2 class="aq-footer-widget-title mb-5">{{ t('footer.newsletter') }}</h2>
                         <div class="aq-footer-widget-input-box mb-25">
                            @if(session('success'))
                               <p class="mb-10 text-success">{{ session('success') }}</p>
                            @endif
                            <form action="{{ route('subscribe') }}" method="POST">
                               @csrf
-                              <p class="mb-15">{{ t('footer.newsletter_text', 'Subscribe to our newsletter & enjoy an exclusive 10% off your first full-price order.') }}</p>
+                              <p class="mb-15">{{ t('footer.newsletter_text') }}</p>
                               <div class="aq-footer-widget-input p-relative">
-                                 <input class="aq-form-control h-56 brr-0" type="email" name="email" placeholder="{{ t('footer.email_placeholder', 'Enter Your Email') }}">
-                                 <button class="aq-btn-subscribe" type="submit">{{ t('common.subscribe', 'Subscribe') }}</button>
+                                 <input class="aq-form-control h-56 brr-0" type="email" name="email" placeholder="{{ t('footer.email_placeholder') }}">
+                                 <button class="aq-btn-subscribe" type="submit">{{ t('common.subscribe') }}</button>
                               </div>
                               @error('email')<small class="text-danger">{{ $message }}</small>@enderror
                            </form>
                         </div>
                         <div class="aq-footer-widget-social-box">
-                           <h2 class="aq-footer-widget-social-title mb-10">{{ t('footer.follow_us', 'Follow Us On') }}</h2>
+                           <h2 class="aq-footer-widget-social-title mb-10">{{ t('footer.follow_us') }}</h2>
                            <div class="aq-footer-widget-social">
                               <a href="{{ setting('facebook', '#') }}">
                                  <i>
@@ -1437,22 +1403,23 @@
                      </div>
                   </div>
                   <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-5">
+                     @php $shoppingMenu = \App\Models\MenuItem::tree('footer_shopping')->first(); @endphp
                      <div class="aq-footer-widget aq-footer-col-2-2 mb-90">
-                        <h2 class="aq-footer-widget-title">{{ t('footer.shopping', 'Shopping') }}</h2>
+                        <h2 class="aq-footer-widget-title">{{ $shoppingMenu?->label ?: t('footer.shopping') }}</h2>
                         <div class="aq-footer-widget-menu">
                            <ul>
-                              <li><a href="{{ route('products') }}">{{ t('footer.all_products', 'All Products') }}</a></li>
-                              <li><a href="{{ route('products') }}">{{ t('footer.shop_by_brand', 'Shop by Brand') }}</a></li>
-                              <li><a href="{{ route('categories') }}">{{ t('footer.offers', 'Offers') }}</a></li>
-                              <li><a href="{{ route('contact') }}">{{ t('footer.track_order', 'Track order') }}</a></li>
-                              <li><a href="{{ route('contact') }}">{{ t('footer.size_guide', 'Size Guide') }}</a></li>
+                              @if($shoppingMenu)
+                                 @foreach($shoppingMenu->children as $child)
+                                    <li><a href="{{ $child->url ?: '#' }}" @if($child->open_in_new_tab) target="_blank" rel="noopener" @endif>{{ $child->label }}</a></li>
+                                 @endforeach
+                              @endif
                            </ul>
                         </div>
                      </div>
                   </div>
                   <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4">
                      <div class="aq-footer-widget mb-90">
-                        <h2 class="aq-footer-widget-title">{{ t('footer.shop_by_category', 'Shop by Category') }}</h2>
+                        <h2 class="aq-footer-widget-title">{{ t('footer.shop_by_category') }}</h2>
                         <div class="aq-footer-widget-menu">
                            <ul>
                               @foreach(\App\Models\Category::active()->roots()->orderBy('sort_order')->take(5)->get() as $footerCategory)
@@ -1463,26 +1430,31 @@
                      </div>
                   </div>
                   <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4">
+                     @php $legalMenu = \App\Models\MenuItem::tree('footer_legal')->first(); @endphp
                      <div class="aq-footer-widget aq-footer-col-2-4 mb-90">
-                        <h2 class="aq-footer-widget-title">{{ t('footer.legal', 'Legal') }}</h2>
+                        <h2 class="aq-footer-widget-title">{{ $legalMenu?->label ?: t('footer.legal') }}</h2>
                         <div class="aq-footer-widget-menu">
                            <ul>
-                              @foreach(\App\Models\Page::where('is_active', true)->take(5)->get() as $footerPage)
-                                 <li><a href="{{ route('page', $footerPage->slug) }}">{{ $footerPage->title }}</a></li>
-                              @endforeach
+                              @if($legalMenu)
+                                 @foreach($legalMenu->children as $child)
+                                    <li><a href="{{ $child->url ?: '#' }}" @if($child->open_in_new_tab) target="_blank" rel="noopener" @endif>{{ $child->label }}</a></li>
+                                 @endforeach
+                              @endif
                            </ul>
                         </div>
                      </div>
                   </div>
                   <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-4">
+                     @php $servicesMenu = \App\Models\MenuItem::tree('footer_services')->first(); @endphp
                      <div class="aq-footer-widget mb-90">
-                        <h2 class="aq-footer-widget-title">{{ t('footer.customer_service', 'Customer Services') }}</h2>
+                        <h2 class="aq-footer-widget-title">{{ $servicesMenu?->label ?: t('footer.customer_service') }}</h2>
                         <div class="aq-footer-widget-menu mb-30">
                            <ul>
-                              <li><a href="{{ route('contact') }}">{{ t('footer.about_us', 'About Us') }}</a></li>
-                              <li><a href="{{ route('contact') }}">{{ t('footer.showrooms', 'Showrooms') }}</a></li>
-                              <li><a href="{{ route('contact') }}">{{ t('footer.faq', 'FAQ') }}</a></li>
-                              <li><a href="{{ route('contact') }}">{{ t('nav.contact', 'Contact') }}</a></li>
+                              @if($servicesMenu)
+                                 @foreach($servicesMenu->children as $child)
+                                    <li><a href="{{ $child->url ?: '#' }}" @if($child->open_in_new_tab) target="_blank" rel="noopener" @endif>{{ $child->label }}</a></li>
+                                 @endforeach
+                              @endif
                            </ul>
                         </div>
                         <div class="aqb-footer-app-info">
@@ -1504,7 +1476,7 @@
                   <div class="row align-items-center">
                      <div class="col-xl-4 col-lg-5 col-md-6">
                         <div class="aq-copyright-text text-center text-md-start">
-                           <p class="mb-0">© {{ date('Y') }} {{ t('footer.copyright', 'All Rights Reserved') }} | <a href="{{ route('home') }}">{{ setting('site_name', 'Bazaro') }}</a>.</p>
+                           <p class="mb-0">© {{ date('Y') }} {{ t('footer.copyright') }} | <a href="{{ route('home') }}">{{ setting('site_name', 'Bazaro') }}</a>.</p>
                         </div>
                      </div>
                      <div class="col-xl-8 col-lg-7 col-md-6">

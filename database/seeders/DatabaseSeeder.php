@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             ContactMessageSeeder::class,
             TranslationSeeder::class,
             FaqSeeder::class,
+            MenuItemSeeder::class,
         ]);
     }
 }
