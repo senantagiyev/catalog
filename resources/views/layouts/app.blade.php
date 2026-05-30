@@ -37,25 +37,7 @@
 <body>
 
    <!-- pre loader area start -->
-   <div id="loading">
-      <div id="loading-center">
-         <div id="loading-center-absolute">
-            <div class="aq-preloader-content">
-               <div class="aq-preloader-logo">
-                  <div class="aq-preloader-circle">
-                     <svg width="190" height="190" viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle stroke="#D9D9D9" cx="190" cy="190" r="180" stroke-width="6" stroke-linecap="round"></circle> 
-                        <circle stroke="red" cx="190" cy="190" r="180" stroke-width="6" stroke-linecap="round"></circle> 
-                     </svg>
-                  </div>
-                  <img src="{{ media(setting('loading_image') ?: setting('logo'), 'assets/img/logo/favicon.png') }}" alt="">
-               </div>
-               <h3 class="aq-preloader-title">{{ setting('site_name', '14innocent') }}</h3>
-               <p class="aq-preloader-subtitle">{{ t('common.loading') }}</p>
-            </div>
-         </div>
-      </div>  
-   </div>
+   
    <!-- pre loader area end -->
 
    <!-- back to top start -->
@@ -1155,23 +1137,12 @@
       <div class="aq-footer-area pt-100" data-bg-color="#F1EFEE">
          <div class="container container-1830">
             <div class="aq-footer-widget-wrap">
-               <div class="row">
-                  <div class="col-xxl-4 col-xl-3 col-lg-4 col-md-7">
+               <div class="row row-cols-xxl-5 row-cols-xl-5 row-cols-md-2 row-cols-1 g-4">
+                  <div class="col">
                      <div class="aq-footer-widget aq-footer-col-2-1 mb-90">
                         <h2 class="aq-footer-widget-title mb-5">{{ t('footer.newsletter') }}</h2>
                         <div class="aq-footer-widget-input-box mb-25">
-                           @if(session('success'))
-                              <p class="mb-10 text-success">{{ session('success') }}</p>
-                           @endif
-                           <form action="{{ route('subscribe') }}" method="POST">
-                              @csrf
-                              <p class="mb-15">{{ t('footer.newsletter_text') }}</p>
-                              <div class="aq-footer-widget-input p-relative">
-                                 <input class="aq-form-control h-56 brr-0" type="email" name="email" placeholder="{{ t('footer.email_placeholder') }}">
-                                 <button class="aq-btn-subscribe" type="submit">{{ t('common.subscribe') }}</button>
-                              </div>
-                              @error('email')<small class="text-danger">{{ $message }}</small>@enderror
-                           </form>
+
                         </div>
                         <div class="aq-footer-widget-social-box">
                            <h2 class="aq-footer-widget-social-title mb-10">{{ t('footer.follow_us') }}</h2>
@@ -1208,7 +1179,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-5">
+                  <div class="col">
                      @php $shoppingMenu = \App\Models\MenuItem::tree('footer_shopping')->first(); @endphp
                      <div class="aq-footer-widget aq-footer-col-2-2 mb-90">
                         <h2 class="aq-footer-widget-title">{{ $shoppingMenu?->label ?: t('footer.shopping') }}</h2>
@@ -1223,7 +1194,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4">
+                  <div class="col">
                      <div class="aq-footer-widget mb-90">
                         <h2 class="aq-footer-widget-title">{{ t('footer.shop_by_category') }}</h2>
                         <div class="aq-footer-widget-menu">
@@ -1235,7 +1206,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4">
+                  <div class="col">
                      @php $legalMenu = \App\Models\MenuItem::tree('footer_legal')->first(); @endphp
                      <div class="aq-footer-widget aq-footer-col-2-4 mb-90">
                         <h2 class="aq-footer-widget-title">{{ $legalMenu?->label ?: t('footer.legal') }}</h2>
@@ -1250,7 +1221,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-4">
+                  <div class="col">
                      @php $servicesMenu = \App\Models\MenuItem::tree('footer_services')->first(); @endphp
                      <div class="aq-footer-widget mb-90">
                         <h2 class="aq-footer-widget-title">{{ $servicesMenu?->label ?: t('footer.customer_service') }}</h2>
@@ -1263,14 +1234,7 @@
                               @endif
                            </ul>
                         </div>
-                        <div class="aqb-footer-app-info">
-                           <a class="mb-5" href="#">
-                              <img src="{{ asset('assets/img/icon/google.png') }}" alt="">
-                           </a>
-                           <a class="mb-5" href="#">
-                              <img src="{{ asset('assets/img/icon/app.png') }}" alt="">
-                           </a>
-                        </div>
+                        
                      </div>
                   </div>
                </div>

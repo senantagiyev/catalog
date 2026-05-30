@@ -102,7 +102,7 @@
 
       <!-- middle slider banner area -->
       @if($middleSliders->isNotEmpty())
-      <div class="aq-categories-banner pt-60 pb-60">
+      {{-- <div class="aq-categories-banner pt-60 pb-60">
          <div class="container container-1240">
             <div class="row">
                @foreach($middleSliders as $slider)
@@ -131,7 +131,7 @@
                @endforeach
             </div>
          </div>
-      </div>
+      </div> --}}
       @endif
       <!-- middle slider banner end -->
 
