@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 @section('content')
 
 
@@ -25,7 +25,7 @@
 
 
       <!-- aq categories banner start -->
-      <div class="aq-categories-banner">
+      {{-- <div class="aq-categories-banner">
          <div class="container container-1240">
             <div class="row">
                <div class="col-xl-12">
@@ -77,7 +77,7 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> --}}
       <!-- aq categories banner end -->
 
 

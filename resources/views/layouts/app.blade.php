@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
@@ -30,15 +30,18 @@
    <link rel="stylesheet" href="{{ asset('assets/css/spacing.css') }}">
    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 
+   <style>
+      html, body { margin: 0 !important; padding: 0 !important; border: 0 !important; }
+      body { padding-top: 0 !important; }
+      header, main, footer { margin: 0 !important; padding: 0 !important; }
+      body > header,
+      body > main,
+      body > footer { display: block; margin: 0 !important; }
+      .aq-header-top-area { margin-top: 0 !important; padding-top: 0 !important; }
+      .aq-search-area { padding: 24px 60px !important; }
+   </style>
 </head>
-
- 
-
 <body>
-
-   <!-- pre loader area start -->
-   
-   <!-- pre loader area end -->
 
    <!-- back to top start -->
    <div class="progress-wrap">
@@ -59,7 +62,7 @@
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
-                  <form action="{{ route('products') }}" method="GET" class="aq-search-input p-relative mb-60">
+                  <form action="{{ route('products') }}" method="GET" class="aq-search-input p-relative">
                      <input type="text" name="search" value="{{ request('search') }}" placeholder="{{ t('search.placeholder') }}">
                      <button type="submit" class="aq-search-input-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -1135,11 +1138,11 @@
 
       <!-- footer area start -->
       <div class="aq-footer-area pt-100" data-bg-color="#F1EFEE">
-         <div class="container container-1830">
+         <div class="container container-1330">
             <div class="aq-footer-widget-wrap">
-               <div class="row row-cols-xxl-5 row-cols-xl-5 row-cols-md-2 row-cols-1 g-4">
+               <div class="row row-cols-xxl-5 row-cols-xl-5 row-cols-md-2 row-cols-1 g-4 justify-content-between">
                   <div class="col">
-                     <div class="aq-footer-widget aq-footer-col-2-1 mb-90">
+                     <div class="aq-footer-widget mb-90">
                         <h2 class="aq-footer-widget-title mb-5">{{ t('footer.newsletter') }}</h2>
                         <div class="aq-footer-widget-input-box mb-25">
 
@@ -1181,7 +1184,7 @@
                   </div>
                   <div class="col">
                      @php $shoppingMenu = \App\Models\MenuItem::tree('footer_shopping')->first(); @endphp
-                     <div class="aq-footer-widget aq-footer-col-2-2 mb-90">
+                     <div class="aq-footer-widget mb-90">
                         <h2 class="aq-footer-widget-title">{{ $shoppingMenu?->label ?: t('footer.shopping') }}</h2>
                         <div class="aq-footer-widget-menu">
                            <ul>
@@ -1208,7 +1211,7 @@
                   </div>
                   <div class="col">
                      @php $legalMenu = \App\Models\MenuItem::tree('footer_legal')->first(); @endphp
-                     <div class="aq-footer-widget aq-footer-col-2-4 mb-90">
+                     <div class="aq-footer-widget mb-90">
                         <h2 class="aq-footer-widget-title">{{ $legalMenu?->label ?: t('footer.legal') }}</h2>
                         <div class="aq-footer-widget-menu">
                            <ul>
@@ -1241,7 +1244,7 @@
             </div>
          </div>
          <div class="aq-copyright-area">
-            <div class="container container-1830">
+            <div class="container container-1330">
                <div class="aq-copyright-border pt-15 pb-35">
                   <div class="row align-items-center">
                      <div class="col-xl-4 col-lg-5 col-md-6">

@@ -67,7 +67,7 @@ class MenuItemSeeder extends Seeder
             ['label' => ['en' => 'Customer Services', 'az' => 'Müştəri xidməti', 'ru' => 'Поддержка'], 'sort_order' => 0, 'is_active' => true],
         );
         $services = [
-            ['About Us', '/page/about', 'Haqqımızda', 'О нас'],
+            ['About Us', '/page/about-us', 'Haqqımızda', 'О нас'],
             ['Contact', '/contact', 'Əlaqə', 'Контакты'],
             ['Showrooms', '/contact', 'Showroom', 'Шоурумы'],
         ];
